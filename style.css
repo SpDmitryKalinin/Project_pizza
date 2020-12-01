@@ -1,0 +1,511 @@
+@import url(./fonts/roboto/roboto.css);
+@import url(./fonts/montserrat/montserrat.css);
+* > *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+button{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.page{
+    max-width: 1920px;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #3A3A3A;
+}
+/*Хедер*/
+.header{
+    width: 1112px;
+    margin: 21px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.header__time{
+    width: 119px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 18.75px;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.header__logo-image{
+    width: 112px;
+}
+
+.header__time-span{
+    font-weight: 500;
+}
+
+.header__call-container{
+    margin-left: 162px;
+    margin-right: 144px;
+    flex-direction: column;
+    text-align: center;
+    width: 145px;
+}
+
+.header__call-button{
+    font-family: "Roboto", Arial, sans-serif;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #FF7A00;
+    font-size: 16px;
+    line-height: 18.75px;
+    margin-top: 23px;
+    font-weight: 500;
+}
+
+.header__call-button:focus{
+    outline: none;
+}
+
+.header__call-button:hover{
+    cursor: pointer;
+    color: #6CBB06;
+}
+
+.header__call-text{
+    margin: 0;
+    font-size: 14px;
+}
+
+.header__present{
+    text-align: center;
+    margin-right: 66px;
+}
+
+.header__present-time{
+    font-family: "Roboto", Arial, sans-serif;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 23px;
+}
+
+.header__present-time:hover{
+    color: #6CBB06;
+    cursor: pointer;
+}
+
+.header__present-text{
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.header__present-text-red{
+    color: red;
+}
+
+.header__basket{
+   background-image: url(./images/shopping-basket1.svg);
+   background-position: 8px 15px;
+   background-repeat: no-repeat;
+}
+
+.header__basket:hover{
+    cursor: pointer;
+    background-image: url(./images/shopping-basket2.svg);
+}
+
+.header__basket:hover > .header__basket-border{
+    background-color: #6CBB06;
+    border: 1px solid #6CBB06;
+}
+
+.header__basket:hover > .header__basket-price{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 1px auto;
+}
+
+.header__basket-img{
+    margin: 14px auto 0 auto;
+    width: 38px;
+}
+
+.header__basket-border{
+    border: 1px solid #FF7A00;
+    width: 54px;
+    background-color: #FF7A00;
+    border-radius: 3px;
+    padding: 0, 5px; 
+    margin: 41px auto 0 auto;
+}
+
+.header__basket-price{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: white;
+    margin: 1px auto;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.header__button-autoriz{
+    border: 1px solid #8DCD31;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+    border-radius: 36px;
+    width: 68px;
+    font-size: 12px;
+    line-height: 14px;
+    color: white;
+    padding: 5px 0 6px 0;
+    outline: none;
+    margin-left: 26px;
+    margin-top: 33px;
+}
+
+.header__button-autoriz:hover{
+    cursor: pointer;
+    background: linear-gradient(180deg, #7EDD05 0%, #9BDC31 100%), #8DCD31;
+}
+
+@media screen and (max-width: 1280px){
+
+}
+
+@media screen and (max-width: 882px){
+    .page{
+        max-width: 883px;
+    }
+}
+
+/*Навигатор*/
+
+.navigation{
+    width: 1112px;
+    display: flex;
+    justify-content: space-between;
+    margin: 22px auto 23px auto;
+}
+
+.navigation__element{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    font-size: 12px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #3A3A3A;
+}
+
+.navigation__element:hover{
+    cursor: pointer;
+    color: #FF7A00;
+}
+
+.navigation__element-red{
+    color: red;
+}
+
+/*Баннер*/
+
+.banner{
+    width: 1112px;
+    margin: 0 auto 0 auto;
+    display: flex;
+}
+
+.banner__image{
+    width: 100%;
+    background-image: url(./images/Rectangle3.png);
+    background-repeat: no-repeat;
+}
+
+.banner__left-button{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    margin-left: 20px;
+}
+
+.banner__left-button:hover{
+    cursor: pointer;
+}
+
+.banner__right-button:hover{
+    cursor: pointer;
+}
+
+.banner__right-button{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    margin-right: 20px;
+}
+
+.banner__buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 195px;
+    margin-bottom: 195px;
+}
+
+/*Популярное*/
+.popular{
+    width: 1112px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.popular__title{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-top: 92px;
+    margin-bottom: 23px;
+}
+
+.popular__cards{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.popular__card{
+    display: flex;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 6px 29px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    z-index: 1;
+    position: relative;
+    flex-direction: row;
+    margin-right: 30px;
+}
+
+.popular__card-image{
+    position: relative;
+    z-index: 3;
+    margin-left: 7px;
+    align-self: center;
+}
+
+.popular__card-info-title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 10px;
+    margin-top: 27px;
+}
+
+.popular__card-weight{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #8C8C8C;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.popular__button-price{
+    border: none;
+    outline: none;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    width: 91px;
+    border-radius: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 10px;
+    margin-top: 41px;
+}
+/*Грид меню*/
+
+.menu{
+    max-width: 1112px;
+    margin: 95px auto 0 auto;
+}
+
+.menu__title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.elements{
+    display: grid;
+    width: 100%;
+    column-gap: 23px;
+    row-gap: 70px;
+    grid-template-columns: repeat(auto-fill, 355px);
+}
+
+.element{
+    position: relative;
+}
+
+.element__image{
+    width:70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.element__title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+.element__description{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 30px;
+}
+
+.element__info{
+    width: 100%;
+    display: flex;
+    font-style: normal;
+    font-weight: normal;
+    align-items: center;
+}
+
+.element__price{
+    font-size: 24px;
+    line-height: 28px;
+    margin-right: 25px;
+}
+
+.element__mass{
+    font-size: 14px;
+    line-height: 16px;
+}
+.element__submit{
+    padding: 10px 45px;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+    border-radius: 37px;
+    margin-left: auto;
+}
+
+.element__message{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.element__message-item{
+    border-radius: 42px;
+}
+
+.element__message-text{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 9px 12px;
+    color: #FFFFFF;
+}
+
+.element__new{
+    background: linear-gradient(180deg, #FF6969 0%, rgba(255, 54, 54, 0) 99.99%, rgba(255, 34, 34, 0) 100%), #FF0000;
+}
+
+.element__promo{
+    background: linear-gradient(180deg, #FFB800 0%, rgba(255, 201, 96, 0) 100%), #FF912C;
+    margin-left: 15px;
+}
+
+/*About Us*/
+
+.aboutUs{
+    margin-top: 100px;
+    width: 1112px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutUs__buttons{
+    margin-bottom: 40px;
+}
+
+.aboutUs__button{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 9px 22px;
+    margin-right: 35px;
+}
+
+.aboutUs__button_active{
+    color: #FF7A00;
+    border: 1px solid #FF7A00;
+    border-radius: 42px; 
+}
+.aboutUs__title{
+    margin-bottom: 38px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+}
+.aboutUs__paragraph{
+    font-size: 18px;
+    line-height: 21px;
+    color: #3A3A3A;
+    margin-bottom: 45px;
+    max-width: 620px;
+}
+.employees{
+    display: flex;
+}
+
+.employees div:first-of-type{
+    margin-left: 0;
+}
+.employees__item{
+    width: 350px;
+    margin-left: 31px;
+}
+
+.employees__image{
+    width: 100%;
+    margin-bottom: 13px;
+}
+.employees__name{
+    font-weight: 500;
+    font-size: 30.2283px;
+    line-height: 35px;
+}
+
+.employees__employ{
+    font-size: 19.2362px;
+    line-height: 23px;
+    margin-bottom: 13px;
+}
+
+.employees__description{
+    font-weight: 300;
+    font-size: 16.4882px;
+    line-height: 19px;
+}
