@@ -50,15 +50,19 @@
 
             <main>
                 <section class="banner">
-                    <div class="banner__image">
-                        <div class="banner__buttons">
-                            <button class="banner__left-button" type="button">
-                                <img class="banner__left-button-image" src="images/left-arrow2.svg" alt="Левая стрелка переключения">
-                            </button>
-                            <button class="banner__right-button" type="button">
-                                <img class="banner__right-button-image" src="images/right-arrow3.svg" alt="Правая стрелка переключения">
-                            </button>
-                        </div>
+                    <div class="banner__image banner__prev">
+                        <button class="banner__button banner__left-button" disabled type="button"></button>
+                        <button class="banner__button banner__right-button" disabled type="button"></button>
+                    </div>
+                    <div class="banner__image banner__active">
+                        <img src="images/Rectangle3.png">
+                        <button class="banner__button banner__left-button" disabled type="button"></button>
+                        <button class="banner__button banner__right-button" disabled type="button"></button>
+                    </div>
+
+                    <div class="banner__image banner__post">
+                        <button class="banner__button banner__left-button" disabled type="button"></button>
+                        <button class="banner__button banner__right-button" disabled type="button"></button>
                     </div>
                 </section>
 
@@ -184,5 +188,6 @@
                 </section>
             </main>
         </div>
+        <script src ="scripts/index.js"></script>
     </body>
 </html>

@@ -216,44 +216,69 @@ button{
 /*Баннер*/
 
 .banner{
-    width: 1112px;
+    width: 100%;
     margin: 0 auto 0 auto;
     display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 430px;
 }
 
 .banner__image{
-    width: 100%;
-    background-image: url(./images/Rectangle3.png);
+    width: 1112px;
+    height: 430px;
+    position: absolute;
     background-repeat: no-repeat;
+    border-radius: 20px;
+    flex-shrink: 0;
+    opacity: 0.4;
+    border: 1px solid red;
 }
 
+.banner__active{
+    top: 0;
+    left: calc((99vw - 1112px) / 2);
+    opacity: 1;
+}
+
+.banner__prev{
+    top: 0;
+    left: calc((99vw - 1112px) / 2 + 1148px);
+}
+
+.banner__post{
+    top: 0;
+    right: calc((99vw - 1112px) / 2 + 1148px);;
+}
+.banner__button{
+    position: absolute;
+}
 .banner__left-button{
     background-color: transparent;
     outline: none;
     border: 0;
-    margin-left: 20px;
-}
-
-.banner__left-button:hover{
-    cursor: pointer;
-}
-
-.banner__right-button:hover{
-    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    top:197px;
+    left: 20px;
+    background-image: url(images/left-arrow2.svg);
 }
 
 .banner__right-button{
     background-color: transparent;
     outline: none;
     border: 0;
-    margin-right: 20px;
+    width: 36px;
+    height: 36px;
+    top:197px;
+    right: 20px;
+    background-image: url(images/right-arrow3.svg);
 }
-
-.banner__buttons{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 195px;
-    margin-bottom: 195px;
+.banner__left-button:hover{
+    background-image: url(images/left-arrow-hover.svg);
+}
+.banner__right-button:hover{
+    background-image: url(images/right-arrow-hover.svg);
 }
 
 /*Популярное*/
