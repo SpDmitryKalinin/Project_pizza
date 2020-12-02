@@ -224,7 +224,7 @@ button{
     height: 430px;
 }
 
-.banner__image{
+.banner__item{
     width: 1112px;
     height: 430px;
     position: absolute;
@@ -534,3 +534,394 @@ button{
     font-size: 16.4882px;
     line-height: 19px;
 }
+
+/*Футер*/
+
+.footer{
+    margin-top: 70px;
+    width: 100%;
+    background: #4D4D4D;
+    
+}
+
+.footer__container{
+    display: flex;
+    width: 1113px;
+    margin: 0 auto 0 auto;
+    flex-direction: row;
+}
+
+.footer__navigation{
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    margin-top: 23px;
+    margin-bottom: 28px;
+    margin-right: 44px;
+}
+
+.footer__nafigation-button{
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: left;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.footer__nafigation-button:hover{
+    cursor: pointer;
+    color: #FF7A00;
+}
+
+.footer__info{
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.footer__logo-image{
+    width: 112px;
+    margin: 23px auto 11px auto;
+}
+
+.footer__social-med{
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin-left: auto;
+}
+
+.footer__info-text{
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.footer__soc-title{
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-top: 50px;
+    margin-bottom: 18px;
+}
+
+.footer__icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+/*ФОРМЫ*/
+
+/*Окно заказ принят*/
+.order__accepted{
+    width: 384px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order__image{
+    margin-top: 24px;
+    margin-bottom: 15px;
+    width: 58px;
+}
+
+.order__title{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #70BC0B;
+    text-align: center;
+    width: 200px;
+}
+
+.order__text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    margin-top: 11px;
+    width: 326px;
+}
+
+.order__number{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FF7A00;
+    margin-top: 7px;
+    margin-bottom: 27px;
+}
+
+/*Окно "Хорошие люди сейчас отдыхают"*/
+
+.window__now-close{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 477px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.window__bed-image{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 80px;
+}
+
+.window__title{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #70BC0B;
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+.window__text{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    width: 397px;
+}
+
+.window__button{
+    width: 137px;
+    border: 1px solid #8DCD31;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+    border-radius: 79px;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 22px;
+    margin-bottom: 23px;
+}
+
+.window__button:hover{
+    background: linear-gradient(180deg, #7EDD05 0%, #9BDC31 100%), #8DCD31;
+}
+
+/*Форма номер телефона*/
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 267px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.phone__title{
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.phone__number{
+    width: 227px;
+    border: 1.17518px solid #FFB800;
+    box-sizing: border-box;
+    border-radius: 57.5839px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    color: #B2B2B2;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.phone__button{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    border: 1px solid #8DCD31;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+    border-radius: 79px;
+    width: 227px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.phone__button:hover{
+    background: linear-gradient(180deg, #7EDD05 0%, #9BDC31 100%), #8DCD31;
+}
+
+/*Форма введите код*/
+.code{
+    width: 267px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.code__title{
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+.code__text{
+    border: 1.17518px solid #FFB800;
+    box-sizing: border-box;
+    border-radius: 57.5839px;
+    width: 227px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    outline: none;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.code__check-input{
+    display: flex;
+    flex-direction: row;
+    font-weight: normal;
+    width: 227px;
+    margin-top: 13px;
+}
+
+.code__label{
+    margin-right: 10px;
+}
+
+.code__checkbox{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.code__checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .code__checkbox+label::before {
+    content: '';
+    display: inline-block;
+    border: 1px solid #74BE11;
+    height: 21px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 21px;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    
+  }
+  .code__checkbox:checked+label::before {
+    background-image: url(./images/Vectorcheck.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    
+  }
+  
+  /* стили для чекбокса, находящегося в фокусе */
+  .code__checkbox:focus+label::before {
+      background-color: white;
+  }
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  .code__checkbox:focus:not(:checked)+label::before {
+    background-color: white;
+  }
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  .code__checkbox:disabled+label::before {
+    background-color: #e9ecef;
+  }
+
+.code__label-text{
+    display: flex;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 10px;
+}
+
+  .code__info-icon{
+    width: 11px;
+    align-self: baseline;
+  }
+
+  .code__button{
+    width: 227px;
+    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+    border-radius: 79px;
+    border: 1px solid #74BE11;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: white;
+    margin-bottom: 18px;
+  }
+
+  .code__button:hover{
+    background: linear-gradient(180deg, #7EDD05 0%, #9BDC31 100%), #8DCD31;
+  }
+
+  /*Заказ на доставку*/
+
+  .delivery{
+    display: flex;
+    flex-direction: column;
+    width: 483px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+  }
+
+  .delivery__title{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-left: 26px;
+    margin-bottom: 13px;
+  }

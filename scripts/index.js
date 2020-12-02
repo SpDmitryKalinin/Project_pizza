@@ -1,16 +1,22 @@
 const bannerContainer = document.querySelector('.banner');
-const banner = document.querySelectorAll('.banner__image');
-let bannerArr = Array.from(banner);
-initBanner();
-addEventListeners();
+const banner = document.querySelectorAll('.banner__item');
+const templateBanner = document.querySelector('.banner__template').content;
+const bannerArr = Array.from(banner);
+
+
+
+
 function initBanner(){
-    console.log(bannerArr);
     bannerArr.forEach(item =>{
         if(item.classList.contains('banner__active')){
             initButtons(item);
         }
     });
 }
+
+initBanner();
+addEventListeners();
+
 
 function addEventListeners(){
     bannerArr.forEach(bannerItem =>{
@@ -45,7 +51,6 @@ function leftArrowFunction(){
             const buttons = Array.from(bannerArr[i].querySelectorAll('.banner__button'));
             buttons.forEach(button =>{
                 button.setAttribute("disabled", "disabled");
-                console.log(button);
             });
             bannerArr[i].classList.remove('banner__active');
             bannerArr[i].classList.add('banner__post');
@@ -61,6 +66,26 @@ function leftArrowFunction(){
 }
 
 function rightArrowFunction(){
-    console.log('right!');
+    for(let i=0; i<bannerArr.length; i++){
+        if(bannerArr[i].classList.contains('banner__post')){
+            bannerArr[i].classList.remove('banner__post');
+            bannerArr[i].classList.add('banner__active');
+            continue;
+        }
+        if(bannerArr[i].classList.contains('banner__active')){
+            const buttons = Array.from(bannerArr[i].querySelectorAll('.banner__button'));
+            buttons.forEach(button =>{
+                button.setAttribute("disabled", "disabled");
+            });
+            bannerArr[i].classList.remove('banner__active');
+            bannerArr[i].classList.add('banner__prev');
+            continue;
+        }
+        if(bannerArr[i].classList.contains('banner__prev')){
+            bannerArr[i].classList.remove('banner__prev');
+            bannerArr[i].classList.add('banner__post');
+            continue;
+        }
+    }
+    initBanner();
 }
-

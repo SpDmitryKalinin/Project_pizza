@@ -50,17 +50,17 @@
 
             <main>
                 <section class="banner">
-                    <div class="banner__image banner__prev">
+                    <div class="banner__item banner__prev">
                         <button class="banner__button banner__left-button" disabled type="button"></button>
                         <button class="banner__button banner__right-button" disabled type="button"></button>
                     </div>
-                    <div class="banner__image banner__active">
+                    <div class="banner__item banner__active">
                         <img src="images/Rectangle3.png">
                         <button class="banner__button banner__left-button" disabled type="button"></button>
                         <button class="banner__button banner__right-button" disabled type="button"></button>
                     </div>
-
-                    <div class="banner__image banner__post">
+                    <div class="banner__item banner__post">
+                        <img src="images/Rectangle3.png">
                         <button class="banner__button banner__left-button" disabled type="button"></button>
                         <button class="banner__button banner__right-button" disabled type="button"></button>
                     </div>
@@ -187,7 +187,93 @@
                     </div>
                 </section>
             </main>
+            
+            <footer class="footer">
+                <div class="footer__container">
+                    <nav class="footer__navigation">
+                        <button class="footer__nafigation-button" type="button">Роллы (суши)</button>
+                        <button class="footer__nafigation-button" type="button">Горячие и запеченные роллы</button>
+                        <button class="footer__nafigation-button" type="button">Сеты</button>
+                        <button class="footer__nafigation-button" type="button">Пицца</button>
+                    </nav>
+
+                    <nav class="footer__navigation">
+                        <button class="footer__nafigation-button" type="button"> Снеки (фри) и Десерты</button>
+                        <button class="footer__nafigation-button" type="button">Напитки</button>
+                        <button class="footer__nafigation-button" type="button">Акции</button>
+                        <button class="footer__nafigation-button" type="button">Доставка</button>
+                    </nav>
+
+                    <div class="footer__info">
+                        <img class="footer__logo-image" src="./images/blacklogo.png" alt="Логотип">
+                        <p class="footer__info-text">Хорошие Люди ИП Семакин А.В. ОГРНИП 317183200073524, 
+                            Фактический адрес г. Феодосия, ул. Гарнаева д. 59.</p>
+                    </div>
+
+                    <div class="footer__social-med">
+                        <p class="footer__soc-title">Мы в соц.сетях:</p>
+                        <div class="footer__icons">
+                            <img class="footer__icon" src="./images/instagram2.svg">
+                            <img class="footer__icon" src="./images/facebook.svg">
+                            <img class="footer__icon" src="./images/vk(1).svg">
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+
+
+            <div class="order__accepted">
+                <img class="order__image" src="./images/thumbs-up1FORM.png" alt="Картинка палец вверх">
+                <h2 class="order__title">Спасибо, Ваш заказ принят!</h2>
+                <p class="order__text">Мы свяжемся с вами для подтверждения заказа. 
+                    Если мы не перезвонили в течении 10 минут, позвоните нам по номеру: </p>
+                <p class="order__number">+7(978) 227-81-08</p>
+            </div>
+
+
+            <div class="window__now-close">
+                <img class="window__bed-image" src="./images/bed1.png" alt="Кровать">
+                <h2 class="window__title">Хорошие люди сейчас отдыхают</h2>
+                <p class="window__text">Мы работаем с 10:00 до 22:00, вы можете оформить предзаказ на удобное для вас время</p>
+                <button class="window__button" type="button">Оформить заказ</button>
+            </div>
+
+
+            <form class="phone">
+                <h2 class="phone__title">Номер телефона:</h2>
+                <input class="phone__number" type="number" placeholder="+7(978)-000-00-00">
+                <button class="phone__button" type="button">Выслать код</button>
+            </form>
+
+
+            <form class="code">
+                <h2 class="code__title">Введите код:</h2>
+                <input class="code__text" type="text">
+                <div class="code__check-input">
+                    <input class="code__checkbox" type="checkbox" id="check" name="check">
+                    <label class="code__label" for="check" ></label>
+                    <p class="code__label-text">Сообщать о бонусах, акциях и новых продуктах<img class="" src="./images/Group5.png" alt="Инфо"></p>
+                </div>
+                
+                <button class="code__button" type="button">Отправить</button>
+            </form>
+
+
+            <form class="delivery">
+                <h2 class="delivery__title">Заказ на доставку</h2>
+            </form>
         </div>
+        
+
+        <template class="banner__template">
+            <div class="banner__item banner__post">
+                <img class="banner__image" src="images/Rectangle3.png" >
+                <button class="banner__button banner__left-button" disabled type="button"></button>
+                <button class="banner__button banner__right-button" disabled type="button"></button>
+            </div>
+        </template>
         <script src ="scripts/index.js"></script>
     </body>
 </html>
