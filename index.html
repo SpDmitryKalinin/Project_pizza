@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <title>Суши - главная</title>
     </head>
 
@@ -13,26 +14,34 @@
                 <div class="header__logo">
                     <img class="header__logo-image" src="images/blacklogo.png" alt="Логотип">
                 </div>
+                <div class="header__adaptive">
                 <p class="header__time"><span class="header__time-span">Время работы: </span>с 10:00 до 22:00 </p>
+                    <div class="header__call-container">
+                        <button class="header__call-button" type="button">+7(978) 227-81-08</button>
+                        <p class="header__call-text">Ждем вашего звонка!</p>
+                    </div>
 
-                <div class="header__call-container">
-                    <button class="header__call-button" type="button">+7(978) 227-81-08</button>
-                    <p class="header__call-text">Ждем вашего звонка!</p>
-                </div>
-
-                <div class="header__present">
-                    <button class="header__present-time" type="button">59 минут</button>
-                    <p class="header__present-text">или пицца в подарок<span class="header__present-text-red">*</span></p>
-                </div>
-
-                <div class="header__basket">
-                    <div class="header__basket-border">
-                        <p class="header__basket-price">1450 ₽ </p>
+                    <div class="header__present">
+                        <button class="header__present-time" type="button">59 минут</button>
+                        <p class="header__present-text">или пицца в подарок<span class="header__present-text-red">*</span></p>
                     </div>
                 </div>
-
+                    <button class="header__basket">
+                        <div class="header__basket-border">
+                            <p class="header__basket-price">1450 ₽ </p>
+                        </div>
+                    </button>
                 <div class="header__button">
                     <button class="header__button-autoriz">Войти</button>
+                </div>
+                <div class="header__mobile">
+                    <nav class="navigation">
+                        <button type="button" class="navigation__element navigation__element_active">Роллы и суши</button>
+                        <button type="button" class="navigation__element">Тёплые роллы</button>
+                        <button type="button" class="navigation__element">Комбо и сеты</button>
+                        <button type="button" class="navigation__element">Пицца</button>
+                        <button type="button" class="navigation__element">Снеки и десерты</button>
+                    </nav>
                 </div>
             </header>
 
@@ -49,21 +58,8 @@
             </nav>
 
             <main>
-                <section class="banner">
-                    <div class="banner__item banner__prev">
-                        <button class="banner__button banner__left-button" disabled type="button"></button>
-                        <button class="banner__button banner__right-button" disabled type="button"></button>
-                    </div>
-                    <div class="banner__item banner__active">
-                        <img src="images/Rectangle3.png">
-                        <button class="banner__button banner__left-button" disabled type="button"></button>
-                        <button class="banner__button banner__right-button" disabled type="button"></button>
-                    </div>
-                    <div class="banner__item banner__post">
-                        <img src="images/Rectangle3.png">
-                        <button class="banner__button banner__left-button" disabled type="button"></button>
-                        <button class="banner__button banner__right-button" disabled type="button"></button>
-                    </div>
+                <section class="wrapeer">
+                    
                 </section>
 
                 <section class="popular">
@@ -112,44 +108,50 @@
                     <section class="elements">
                         <div class="element">
                             <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <h3 class="element__title">Сливочный лосось</h3>
-                            <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                            <div class="element__info">
-                                <p class="element__price">359 &#8381;</p>
-                                <p class="element__mass">324 гр</p>
-                                <button class="element__submit">Выбрать</button>
-                            </div>
-                            <div class="element__message">
-                                <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <h3 class="element__title">Сливочный лосось</h3>
-                            <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                            <div class="element__info">
-                                <p class="element__price">359 &#8381;</p>
-                                <p class="element__mass">324 гр</p>
-                                <button class="element__submit">Выбрать</button>
-                            </div>
-                            <div class="element__message">
-                                <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                            <div class="element__about">
+                                <div class="element__message">
+                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
+                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                                </div>
+                                <h3 class="element__title">Сливочный лосось</h3>
+                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
+                                <div class="element__info">
+                                    <p class="element__price">359 &#8381;</p>
+                                    <p class="element__mass">324 гр</p>
+                                    <button class="element__submit">Выбрать</button>
+                                </div>
                             </div>
                         </div>
                         <div class="element">
                             <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <h3 class="element__title">Сливочный лосось</h3>
-                            <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                            <div class="element__info">
-                                <p class="element__price">359 &#8381;</p>
-                                <p class="element__mass">324 гр</p>
-                                <button class="element__submit">Выбрать</button>
+                            <div class="element__about">
+                                <div class="element__message">
+                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
+                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                                </div>
+                                <h3 class="element__title">Сливочный лосось</h3>
+                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
+                                <div class="element__info">
+                                    <p class="element__price">359 &#8381;</p>
+                                    <p class="element__mass">324 гр</p>
+                                    <button class="element__submit">Выбрать</button>
+                                </div>
                             </div>
-                            <div class="element__message">
-                                <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                        </div>
+                        <div class="element">
+                            <img class="element__image" src="images/6-1300.jpg" alt="">
+                            <div class="element__about">
+                                <div class="element__message">
+                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
+                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                                </div>
+                                <h3 class="element__title">Сливочный лосось<span class="element__mass-mobile element__mass">324 гр</span></h3>
+                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
+                                <div class="element__info">
+                                    <p class="element__price">359 &#8381;</p>
+                                    <p class="element__mass">324 гр</p>
+                                    <button class="element__submit">Выбрать</button>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -210,6 +212,11 @@
                             Фактический адрес г. Феодосия, ул. Гарнаева д. 59.</p>
                     </div>
 
+                    <div class="footer__mobile-info">
+                        <p class="footer__mobile-info-text">Хорошие Люди ИП Семакин А.В. ОГРНИП 317183200073524, 
+                            Фактический адрес г. Феодосия, ул. Гарнаева д. 59.</p>
+                    </div>
+
                     <div class="footer__social-med">
                         <p class="footer__soc-title">Мы в соц.сетях:</p>
                         <div class="footer__icons">
@@ -223,57 +230,404 @@
             </footer>
 
 
-
-            <div class="order__accepted">
-                <img class="order__image" src="./images/thumbs-up1FORM.png" alt="Картинка палец вверх">
-                <h2 class="order__title">Спасибо, Ваш заказ принят!</h2>
-                <p class="order__text">Мы свяжемся с вами для подтверждения заказа. 
+            <div class="order__accepted-Container">
+                <div class="order__accepted">
+                    <img class="order__image" src="./images/thumbs-up1FORM.png" alt="Картинка палец вверх">
+                    <h2 class="order__title">Спасибо, Ваш заказ принят!</h2>
+                    <p class="order__text">Мы свяжемся с вами для подтверждения заказа. 
                     Если мы не перезвонили в течении 10 минут, позвоните нам по номеру: </p>
-                <p class="order__number">+7(978) 227-81-08</p>
-            </div>
-
-
-            <div class="window__now-close">
-                <img class="window__bed-image" src="./images/bed1.png" alt="Кровать">
-                <h2 class="window__title">Хорошие люди сейчас отдыхают</h2>
-                <p class="window__text">Мы работаем с 10:00 до 22:00, вы можете оформить предзаказ на удобное для вас время</p>
-                <button class="window__button" type="button">Оформить заказ</button>
-            </div>
-
-
-            <form class="phone">
-                <h2 class="phone__title">Номер телефона:</h2>
-                <input class="phone__number" type="number" placeholder="+7(978)-000-00-00">
-                <button class="phone__button" type="button">Выслать код</button>
-            </form>
-
-
-            <form class="code">
-                <h2 class="code__title">Введите код:</h2>
-                <input class="code__text" type="text">
-                <div class="code__check-input">
-                    <input class="code__checkbox" type="checkbox" id="check" name="check">
-                    <label class="code__label" for="check" ></label>
-                    <p class="code__label-text">Сообщать о бонусах, акциях и новых продуктах<img class="" src="./images/Group5.png" alt="Инфо"></p>
+                    <p class="order__number">+7(978) 227-81-08</p>
                 </div>
-                
-                <button class="code__button" type="button">Отправить</button>
-            </form>
+            </div>
 
+            <div class="window__now-close-Container">
+                <div class="window__now-close">
+                    <img class="window__bed-image" src="./images/bed1.png" alt="Кровать">
+                    <h2 class="window__title">Хорошие люди сейчас отдыхают</h2>
+                    <p class="window__text">Мы работаем с 10:00 до 22:00, вы можете оформить предзаказ на удобное для вас время</p>
+                    <button class="window__button" type="button">Оформить заказ</button>
+                </div>
+            </div>
+
+            <div class="phone-Container">
+                <form class="phone">
+                    <h2 class="phone__title">Номер телефона:</h2>
+                    <input class="phone__number" type="number" placeholder="+7(978)-000-00-00">
+                    <button class="phone__button" type="submit">Выслать код</button>
+                </form>
+            </div>
+
+            <div class="code-Container">
+                <form class="code">
+                    <h2 class="code__title">Введите код:</h2>
+                    <input class="code__text" type="text">
+                    <div class="code__check-input">
+                        <input class="code__checkbox" type="checkbox" id="check" name="check">
+                        <label class="code__label" for="check" ></label>
+                        <p class="code__label-text">Сообщать о бонусах, акциях и новых продуктах</p>
+                    </div>
+                    <button class="code__button" type="sumbit">Отправить</button>
+                </form>
+            </div>
 
             <form class="delivery">
                 <h2 class="delivery__title">Заказ на доставку</h2>
-            </form>
-        </div>
-        
+                <div class="delivery__info">
+                    <input class="delivery__name place__inputs-styles" type="text" id="name" placeholder="Ваше имя">
+                    <h3 class="delivery__subtitle">Время доставки</h3>
+                    <button class="delivery__time-button" type="button">В ближайшее время<img class="delivery__polygon" src="./images/Polygon.svg" alt="Стрелочка"></button>
+                    <h3 class="delivery__title-two">Способы оплаты:</h3>
+                    <div class="delivery__green-border">
+                        <p class="delivery__border-text">У нас есть возможность оплатить картой на сайте</p>
+                    </div>
+                    <div class="delivery__check-input code__check-input">
+                        <input class=" delivery__checkbox code__checkbox" type="checkbox" id="money" name="money">
+                        <label class="delivery__label code__label" for="money" ></label>
+                        <p class="delivery__label-text">Наличными курьеру</p>
+                    </div>
+                    <div class="delivery__check-input code__check-input">
+                        <input class=" delivery__checkbox code__checkbox" type="checkbox" id="debit" name="debit">
+                        <label class="delivery__label code__label" for="debit" ></label>
+                        <p class="delivery__label-text">Картой курьеру</p>
+                    </div>
+                    <div class="delivery__check-input code__check-input">
+                        <input class=" delivery__checkbox code__checkbox" type="checkbox" id="online" name="online">
+                        <label class="delivery__label code__label" for="online" ></label>
+                        <p class="delivery__label-text">Картой на сайте</p>
+                    </div>
 
-        <template class="banner__template">
-            <div class="banner__item banner__post">
-                <img class="banner__image" src="images/Rectangle3.png" >
-                <button class="banner__button banner__left-button" disabled type="button"></button>
-                <button class="banner__button banner__right-button" disabled type="button"></button>
+                    <input class="delivery__card-number place__inputs-styles" type="number" placeholder="Номер карты">
+                    <div class="delivery__card-info">
+                        <input class="delivery__card-term place__inputs-styles" type="number" placeholder="Срок действия">
+                        <input class="delivery__card-cvc place__inputs-styles" type="number" placeholder="CVC" length="3">
+                    </div>
+
+                    <div class="delivery__check-input delivery__check-input-person code__check-input">
+                        <input class=" delivery__checkbox-person code__checkbox" type="checkbox" id="person" name="person">
+                        <label class="delivery__label-person code__label" for="person" ></label>
+                        <p class="delivery__label-text-person">Согласен на обработку персональных данных</p>
+                    </div>
+
+                    <div class="delivery__buttons">
+                        <button class="delivery__back" type="button">Назад в корзину</button>
+                        <button class="delivery__take-order" type="button">Оформить заказ</button>
+                    </div>
+                </div>
+            </form>
+
+            
+            <form class="miniform">
+                <div class="miniform__check-input code__check-input">
+                    <input class="miniform__checkbox code__checkbox" type="checkbox" id="time" name="time">
+                    <label class="code__label" for="time" ></label>
+                    <p class="miniform__label-text">В ближайшее время</p>
+                </div>
+                <div class="miniform__inputs">
+                    <input class="miniform__date place__inputs-styles" type="text" id="date" name="date" placeholder="04.11.2020">
+                    <input class="miniform__time place__inputs-styles" type="text" id="mintime" name="mintime" placeholder="19:30">
+                    <button class="miniform__button" type="button">Выбрать</button>
+                </div>
+            </form>
+
+
+            <form class="place">
+                <div class="place__info">
+                    <button class="cross place__cross-button" type="button"><img src="./images/cross.png"></button>
+                    <h2 class="place__title">Куда доставить?</h2>
+                    <div class="place__check-input code__check-input">
+                        <input class=" place__checkbox-person code__checkbox" type="checkbox" id="selfdeliv" name="selfdeliv">
+                        <label class="place__label-person code__label" for="selfdeliv" ></label>
+                        <p class="place__label-text">Самовывоз</p>
+                    </div>
+                    <div class="place__inputs-first-row">
+                        <input class="place__street place__inputs-styles" type="text" id="street" name="street" placeholder="Улица">
+                        <input class="place__house place__inputs-styles" type="text" id="house" name="house" placeholder="Дом">
+                    </div>
+                    <div class="place__inputs-second-row">
+                        <input class="place__apart place__inputs-styles" type="number" id="apart" name="apart" placeholder="Квартира">
+                        <input class="place__entrance place__inputs-styles" type="number" id="entrance" name="entrance" placeholder="Подъезд">
+                        <input class="place__door-code place__inputs-styles" type="text" id="door-code" name="door-code" placeholder="Код двери">
+                        <input class="place__floor place__inputs-styles" type="text" id="floor" name="floor" placeholder="Этаж">
+                    </div>
+                    <input class="place__comments place__inputs-styles" type="text" id="comments" name="comments" placeholder="Комментарии к заказу">
+                    <button class="place__accept-button" type="button">Подтвердить адрес</button>
+                </div>
+            </form>
+
+            <div class="cabinet-container">
+            <form class="cabinet">
+                <div class="cabinet__info">
+                    <button class="cross cabinet__cross-button place__cross-button" type="button"><img src="./images/cross.png"></button>
+                    <h2 class="cabinet__title">Личный кабинет</h2>
+                    <div class="cabinet__info-list">
+                        <p class="cabinet__number">Ваш номер:<span class="cabinet__number-span"> +7(978)-000-00-00</span></p>
+                        <p class="cabinet__points">Колличество баллов:<span class="cabinet__points-span"> 244 балла</span></p>
+                        <p class="cabinet__points-info">Начисляется баллов:<span class="cabinet__points-info-span"> 10% от суммы</span></p>
+                    </div>
+                    <h2 class="cabinet__second-title">История заказов:</h2>
+                    <div class="cabinet__order-subtitles">
+                        <p class="cabinet__subtitle-order">Заказ</p>
+                        <p class="cabinet__subtitle-sum">Сумма</p>
+                    </div>
+                    <div class="cabinet__order">
+                        <div class="cabinet__order-list">
+                            <h3 class="cabinet__order-subtitle">12.10.2020</h3>
+                            <ul class="cabinet__order-names">
+                                <li class="cabinet__order-name">Пицца Цезарь</li>
+                                <li class="cabinet__order-name">Ролл Филадельфия</li>
+                                <li class="cabinet__order-name">Ролл Калифорния</li>
+                            </ul>
+                        </div>
+                        <p class="cabinet__order-price">1540 ₽ </p>
+                        <div class="cabinet__buttons-repeat">
+                            <button class="cabinet__button-repeat" type="button">Повторить заказ</button>
+                        </div>
+                    </div>
+                    <div class="cabinet__borderline"></div>
+                    <div class="cabinet__order-second cabinet__order">
+                        <div class="cabinet__order-list">
+                            <h3 class="cabinet__order-subtitle">12.10.2020</h3>
+                            <ul class="cabinet__order-names">
+                                <li class="cabinet__order-name">Пицца Цезарь</li>
+                                <li class="cabinet__order-name">Ролл Филадельфия</li>
+                                <li class="cabinet__order-name">Ролл Калифорния</li>
+                            </ul>
+                        </div>
+                        <p class="cabinet__order-price">1540 ₽ </p>
+                        <div class="cabinet__buttons-repeat">
+                            <button class="cabinet__button-repeat" type="button">Повторить заказ</button>
+                        </div>
+                    </div>
+                    <div class="cabinet__borderline"></div>
+                    <div class="cabinet__order-third cabinet__order">
+                        <div class="cabinet__order-list">
+                            <h3 class="cabinet__order-subtitle">12.10.2020</h3>
+                            <ul class="cabinet__order-names">
+                                <li class="cabinet__order-name">Пицца Цезарь</li>
+                                <li class="cabinet__order-name">Ролл Филадельфия</li>
+                                <li class="cabinet__order-name">Ролл Калифорния</li>
+                            </ul>
+                        </div>
+                        <p class="cabinet__order-price">1540 ₽ </p>
+                        <div class="cabinet__buttons-repeat">
+                            <button class="cabinet__button-repeat" type="button">Повторить заказ</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
             </div>
-        </template>
-        <script src ="scripts/index.js"></script>
+
+            <div class="basket-container">
+            <form class="basket">
+                <button class=" cross basket__cross-button cabinet__cross-button place__cross-button" type="button"><img src="./images/cross.png"></button>
+                <div class="basket__container">
+                    <h2 class="basket__title">Корзина</h2>
+                    <div class="basket__subtitles">
+                        <h3 class="basket__subtitle-first">Заказ</h3>
+                        <h3 class="basket__subtitle-second">Сумма:</h3>
+                    </div>
+                    <div class="basket__order-part-one">
+                        <img class="basket__order-image" src="./images/сливочный1.png" alt="Пицца">
+                        <div class="basket__order-subtit">
+                            <h3 class="basket__order-title">Сливочный лосось</h3>
+                            <p class="basket__order-text">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут</p>
+                        </div>
+                        <div class="basket__add-delete-button">
+                            <div class="basket__button">
+                                <button class="basket__button-minus" type="button"><img class="basket__image-minus" src="./images/minus.png" alt="Минус"></button>
+                                <p class="basket__order-quant">01</p>
+                                <button class="basket__button-plus" type="button"><img class="basket__image-plus" src="./images/plus.png" alt="Плюс"></button>
+                            </div>
+                        </div>
+                        <div class="basket__sum-container">
+                            <p class="basket__order-sum">1540 ₽</p>
+                        </div>
+                    </div>
+                    <div class="basket__borderline cabinet__borderline"></div>
+                    <div class="basket__order-part-two basket__order-part-one">
+                        <img class="basket__order-image" src="./images/сливочный1.png" alt="Пицца">
+                        <div class="basket__order-subtit">
+                            <h3 class="basket__order-title">Салат Цезарь</h3>
+                            <p class="basket__order-text">Соус цезарь, копченая курица, салат айсберг, помидоры черри, сухарики, сыр пармезан, сыр моцарелла</p>
+                        </div>
+                        <div class="basket__add-delete-button">
+                            <div class="basket__button">
+                                <button class="basket__button-minus" type="button"><img class="basket__image-minus" src="./images/minus.png" alt="Минус"></button>
+                                <p class="basket__order-quant">01</p>
+                                <button class="basket__button-plus" type="button"><img class="basket__image-plus" src="./images/plus.png" alt="Плюс"></button>
+                            </div>
+                        </div>
+                        <div class="basket__sum-container">
+                            <p class="basket__order-sum">1540 ₽</p>
+                        </div>
+                    </div>
+                    <div class="basket__borderline cabinet__borderline"></div>
+                    <div class="basket__order-part-three basket__order-part-one">
+                        <img class="basket__order-image" src="./images/сливочный1.png" alt="Пицца">
+                        <div class="basket__order-subtit">
+                            <h3 class="basket__order-title">Сливочный лосось</h3>
+                            <p class="basket__order-text">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут</p>
+                        </div>
+                        <div class="basket__add-delete-button">
+                            <div class="basket__button">
+                                <button class="basket__button-minus" type="button"><img class="basket__image-minus" src="./images/minus.png" alt="Минус"></button>
+                                <p class="basket__order-quant">01</p>
+                                <button class="basket__button-plus" type="button"><img class="basket__image-plus" src="./images/plus.png" alt="Плюс"></button>
+                            </div>
+                        </div>
+                        <div class="basket__sum-container">
+                            <p class="basket__order-sum">1540 ₽</p>
+                        </div>
+                    </div>
+                    <div class="basket__borderline cabinet__borderline"></div>
+                    <div class="basket__border-window">
+                        <p class="basket__border-text">Для бесплатной доставки добавьте еще продуктов на 49 ₽ </p>
+                    </div>
+                    <img class="basket__polyg-bottom" src="./images/Polygongreen.png"></div>
+                    <div class="basket__other">
+                        <div class="basket__prod-container basket__prod-container-one">
+                            <img class="basket__product-image-cola" src="./images/55173bcc5a91065c988ab3de8023bcff 1.png" alt="Кола">
+                            <div class="basket__product-info">
+                                <h3 class="basket__product-title">Coca-cola</h3>
+                                <div>
+                                    <button class="basket__product-button place__inputs-styles-bord" type="button">119 ₽ </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="basket__prod-container basket__prod-container-two">
+                            <img class="basket__product-image-mafin" src="./images/mafin.png" alt="Мафин">
+                            <div class="basket__product-info">
+                                <h3 class="basket__product-title">Шоколадный Маффин</h3>
+                                <div>
+                                    <button class="basket__product-button place__inputs-styles-bord" type="button">95  ₽</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="basket__prod-container basket__prod-container-еркуу">
+                            <img class="basket__product-image-balls" src="./images/шарики.png" alt="Картовельные шарики">
+                            <div class="basket__product-info">
+                                <h3 class="basket__product-title">Картофельные шарики с соусом</h3>
+                                <div>
+                                    <button class="basket__product-button place__inputs-styles-bord" type="button">95  ₽</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="souces">
+                        <h2 class="souces__title">Соусы к бортикам и закускам</h2>
+                        <div class="souces__containers">
+                            <div class="souces__container">
+                                <img class="souces__image-hamb" src="./images/kisspng-hamburger-dish-pizza-kfc-sauce-sauce-5b171467ccd862.png" alt="Горчица">
+                                <h3 class="souces__subtitle">Сырный соус</h3>
+                                <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
+                            </div>
+
+                            <div class="souces__container">
+                                <img class="souces__image-hamb" src="./images/kisspng-ketchup-barbecue-sauce-french-fries-vinegar-mcdona-ketchup-sauce-5b335ec07c7d26.png" alt="Барбекю">
+                                <h3 class="souces__subtitle">Барбекю</h3>
+                                <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
+                            </div>
+
+                            <div class="souces__container">
+                                <img class="souces__image-hamb" src="./images/kisspng-hamburger-dish-pizza-kfc-sauce-sauce-5b171467ccd862.png" alt="Горчица">
+                                <h3 class="souces__subtitle">Сырный соус</h3>
+                                <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
+                            </div>
+
+                            <div class="souces__container">
+                                <img class="souces__image-hamb" src="./images/kisspng-ketchup-barbecue-sauce-french-fries-vinegar-mcdona-ketchup-sauce-5b335ec07c7d26.png" alt="Барбекю">
+                                <h3 class="souces__subtitle">Барбекю</h3>
+                                <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
+                            </div>
+
+                            <div class="souces__container">
+                                <img class="souces__image-hamb" src="./images/kisspng-hamburger-dish-pizza-kfc-sauce-sauce-5b171467ccd862.png" alt="Горчица">
+                                <h3 class="souces__subtitle">Сырный соус</h3>
+                                <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
+                            </div>
+                     </div>
+                    </div>
+
+                    <div class="present">
+                        <h2 class="present__title">Купите еще на 212 ₽ чтобы получить подарок <img class="present__gift-image" src="./images/gift 1.png" alt="Подарок"></h2>
+                        <div class="present__containers basket__other">
+                            <div class="basket__prod-container basket__prod-container-one">
+                                <img class="basket__product-image-cola" src="./images/55173bcc5a91065c988ab3de8023bcff 1.png" alt="Кола">
+                                <div class="basket__product-info">
+                                    <h3 class="basket__product-title">Coca-cola</h3>
+                                    <div>
+                                        <button class="basket__product-button place__inputs-styles-bord" type="button">119 ₽ </button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="basket__prod-container basket__prod-container-two">
+                                <img class="basket__product-image-mafin" src="./images/mafin.png" alt="Мафин">
+                                <div class="basket__product-info">
+                                    <h3 class="basket__product-title">Шоколадный Маффин</h3>
+                                    <div>
+                                        <button class="basket__product-button place__inputs-styles-bord" type="button">95  ₽</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="basket__prod-container basket__prod-container-еркуу">
+                                <img class="basket__product-image-balls" src="./images/шарики.png" alt="Картовельные шарики">
+                                <div class="basket__product-info">
+                                    <h3 class="basket__product-title">Картофельные шарики с соусом</h3>
+                                    <div>
+                                        <button class="basket__product-button place__inputs-styles-bord" type="button">95  ₽</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="present__promo-title">Промокод:</h3>
+                        <div class="present__promo-container">
+                            <input class="present__promo-input place__inputs-styles" id="promo" name="promo">
+                            <button class="present__promo-button">Применить</button>
+                        </div>
+                        <div class="present__balls-container">
+                            <div class="present__checkbox place__check-input code__check-input">
+                                <input class=" place__checkbox-person code__checkbox" type="checkbox" id="promocode" name="promocode">
+                                <label class="place__label-person code__label" for="promocode" ></label>
+                                <p class="place__label-text">Использовать баллы</p>
+                            </div>
+                            <p class="present__input-text">На вашем бонусном счету: 255 баллов, 1 балл = 1 руб.   </p>
+                        </div>
+                    </div>
+                    <div class="present__sum">
+                        <h2 class="present__sum-text">Сумма заказа:<span class="present__sum-span">  5400 ₽</span></h2>
+                        <div class="present__sum-button">
+                            <button class="present___sum-button-element" type="button">Оформить заказ</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+
+            <template class="template-element">
+                <div class="element">
+                    <img class="element__image" src="" alt="pic">
+                    <div class="element__about">
+                        <div class="element__message">
+                            <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
+                            <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
+                        </div>
+                        <h3 class="element__title"></h3>
+                        <p class="element__description"></p>
+                        <div class="element__info">
+                            <p class="element__price"></p>
+                            <p class="element__mass"></p>
+                            <button class="element__submit">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="scripts/index.js"></script>
     </body>
 </html>
