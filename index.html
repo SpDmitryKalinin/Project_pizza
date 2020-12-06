@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="500, initial-scale=1">
         <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <title>Суши - главная</title>
     </head>
 
@@ -225,31 +224,44 @@
                             <img class="footer__icon" src="./images/vk(1).svg">
                         </div>
                     </div>
-
                 </div>
             </footer>
+            <div class="map-container popUp_is-close">
+            <div class="overlay">
+                <div class="map" style="position:relative;overflow:hidden;">
+                    <button class="cross place-map__cross-button" type="button"></button>
+                    <a href="https://yandex.ru/maps/11469/feodosia/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Феодосия</a><a href="https://yandex.ru/maps/11469/feodosia/?ll=35.368857%2C45.048319&mode=usermaps&source=constructorLink&um=constructor%3A3c2bfb1ea8464a24c320732a9219a1800c1c310f99b103794c7cf86a3c7eeca4&utm_medium=mapframe&utm_source=maps&z=13" style="color:#eee;font-size:12px;position:absolute;top:14px;">Карта Феодосии с улицами и номерами домов онлайн — Яндекс.Карты</a>
+                    <iframe class="map__iframe" src="https://yandex.ru/map-widget/v1/-/CCUARVBBdD" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;">
+                    </iframe>
+                </div>
+            </div>
+            </div>
 
 
-            <div class="order__accepted-Container">
+            <div class="order__accepted-container popUp_is-close">
+                <div class="overlay">
                 <div class="order__accepted">
-                    <img class="order__image" src="./images/thumbs-up1FORM.png" alt="Картинка палец вверх">
-                    <h2 class="order__title">Спасибо, Ваш заказ принят!</h2>
-                    <p class="order__text">Мы свяжемся с вами для подтверждения заказа. 
+                        <img class="order__image" src="./images/thumbs-up1FORM.png" alt="Картинка палец вверх">
+                        <h2 class="order__title">Спасибо, Ваш заказ принят!</h2>
+                        <p class="order__text">Мы свяжемся с вами для подтверждения заказа. 
                     Если мы не перезвонили в течении 10 минут, позвоните нам по номеру: </p>
-                    <p class="order__number">+7(978) 227-81-08</p>
+                        <p class="order__number">+7(978) 227-81-08</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="window__now-close-Container">
-                <div class="window__now-close">
-                    <img class="window__bed-image" src="./images/bed1.png" alt="Кровать">
-                    <h2 class="window__title">Хорошие люди сейчас отдыхают</h2>
-                    <p class="window__text">Мы работаем с 10:00 до 22:00, вы можете оформить предзаказ на удобное для вас время</p>
-                    <button class="window__button" type="button">Оформить заказ</button>
+            <div class="window__now-close-Container popUp_is-close">
+                <div class="overlay">
+                    <div class="window__now-close">
+                        <img class="window__bed-image" src="./images/bed1.png" alt="Кровать">
+                        <h2 class="window__title">Хорошие люди сейчас отдыхают</h2>
+                        <p class="window__text">Мы работаем с 10:00 до 22:00, вы можете оформить предзаказ на удобное для вас время</p>
+                        <button class="window__button" type="button">Оформить заказ</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="phone-Container">
+            <div class="phone-Container popUp_is-close">
                 <form class="phone">
                     <h2 class="phone__title">Номер телефона:</h2>
                     <input class="phone__number" type="number" placeholder="+7(978)-000-00-00">
@@ -257,7 +269,7 @@
                 </form>
             </div>
 
-            <div class="code-Container">
+            <div class="code-Container popUp_is-close">
                 <form class="code">
                     <h2 class="code__title">Введите код:</h2>
                     <input class="code__text" type="text">
@@ -270,12 +282,27 @@
                 </form>
             </div>
 
+            <div class="delivery-container popUp_is-close">
             <form class="delivery">
                 <h2 class="delivery__title">Заказ на доставку</h2>
                 <div class="delivery__info">
                     <input class="delivery__name place__inputs-styles" type="text" id="name" placeholder="Ваше имя">
                     <h3 class="delivery__subtitle">Время доставки</h3>
                     <button class="delivery__time-button" type="button">В ближайшее время<img class="delivery__polygon" src="./images/Polygon.svg" alt="Стрелочка"></button>
+                    <div class="miniform-container popUp_is-close">
+                        <form class="miniform">
+                            <div class="miniform__check-input code__check-input">
+                                <input class="miniform__checkbox code__checkbox" type="checkbox" id="time" name="time">
+                                <label class="code__label" for="time" ></label>
+                                <p class="miniform__label-text">В ближайшее время</p>
+                            </div>
+                            <div class="miniform__inputs">
+                                <input class="miniform__date place__inputs-styles" type="text" id="date" name="date" placeholder="04.11.2020">
+                                <input class="miniform__time place__inputs-styles" type="text" id="mintime" name="mintime" placeholder="19:30">
+                                <button class="miniform__button" type="button">Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
                     <h3 class="delivery__title-two">Способы оплаты:</h3>
                     <div class="delivery__green-border">
                         <p class="delivery__border-text">У нас есть возможность оплатить картой на сайте</p>
@@ -310,29 +337,15 @@
 
                     <div class="delivery__buttons">
                         <button class="delivery__back" type="button">Назад в корзину</button>
-                        <button class="delivery__take-order" type="button">Оформить заказ</button>
+                        <button class="delivery__take-order" type="submit">Оформить заказ</button>
                     </div>
                 </div>
             </form>
-
-            
-            <form class="miniform">
-                <div class="miniform__check-input code__check-input">
-                    <input class="miniform__checkbox code__checkbox" type="checkbox" id="time" name="time">
-                    <label class="code__label" for="time" ></label>
-                    <p class="miniform__label-text">В ближайшее время</p>
-                </div>
-                <div class="miniform__inputs">
-                    <input class="miniform__date place__inputs-styles" type="text" id="date" name="date" placeholder="04.11.2020">
-                    <input class="miniform__time place__inputs-styles" type="text" id="mintime" name="mintime" placeholder="19:30">
-                    <button class="miniform__button" type="button">Выбрать</button>
-                </div>
-            </form>
-
-
+            </div>
+            <div class="place-container popUp_is-close">
             <form class="place">
                 <div class="place__info">
-                    <button class="cross place__cross-button" type="button"><img src="./images/cross.png"></button>
+                    <button class="cross place__cross-button" type="button"></button>
                     <h2 class="place__title">Куда доставить?</h2>
                     <div class="place__check-input code__check-input">
                         <input class=" place__checkbox-person code__checkbox" type="checkbox" id="selfdeliv" name="selfdeliv">
@@ -350,14 +363,15 @@
                         <input class="place__floor place__inputs-styles" type="text" id="floor" name="floor" placeholder="Этаж">
                     </div>
                     <input class="place__comments place__inputs-styles" type="text" id="comments" name="comments" placeholder="Комментарии к заказу">
-                    <button class="place__accept-button" type="button">Подтвердить адрес</button>
+                    <button class="place__accept-button" type="submit">Подтвердить адрес</button>
                 </div>
             </form>
+            </div>  
 
-            <div class="cabinet-container">
+            <div class="cabinet-container popUp_is-close">
             <form class="cabinet">
                 <div class="cabinet__info">
-                    <button class="cross cabinet__cross-button place__cross-button" type="button"><img src="./images/cross.png"></button>
+                    <button class="cross cabinet__cross-button place__cross-button" type="button"></button>
                     <h2 class="cabinet__title">Личный кабинет</h2>
                     <div class="cabinet__info-list">
                         <p class="cabinet__number">Ваш номер:<span class="cabinet__number-span"> +7(978)-000-00-00</span></p>
@@ -417,9 +431,9 @@
             </form>
             </div>
 
-            <div class="basket-container">
+            <div class="basket-container popUp_is-close">
             <form class="basket">
-                <button class=" cross basket__cross-button cabinet__cross-button place__cross-button" type="button"><img src="./images/cross.png"></button>
+                <button class=" cross basket__cross-button cabinet__cross-button place__cross-button" type="button"></button>
                 <div class="basket__container">
                     <h2 class="basket__title">Корзина</h2>
                     <div class="basket__subtitles">
@@ -548,7 +562,7 @@
                                 <h3 class="souces__subtitle">Сырный соус</h3>
                                 <button class="souces__button place__inputs-styles-bord" type="button">95  ₽</button>
                             </div>
-                     </div>
+                        </div>
                     </div>
 
                     <div class="present">
@@ -627,7 +641,6 @@
                     </div>
                 </div>
             </template>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="scripts/index.js"></script>
     </body>
 </html>

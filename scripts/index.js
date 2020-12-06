@@ -9,20 +9,49 @@ const cabinetContainer = document.querySelector('.cabinet-container');
 const cabinetForm = document.querySelector('.cabinet');
 const phoneForm = document.querySelector('.phone');
 const classPopUpOpen = 'popUp_is-open';
-const classPopUpClose = '.popUp_is-close';
+const classPopUpClose = 'popUp_is-close';
 const buttonAut = document.querySelector('.header__button-autoriz');
 const templateElement = document.querySelector('.template-element').content;
 const elementsContainer = document.querySelector('.elements');
 const basketButton = document.querySelector('.header__basket');
 const basketContainer = document.querySelector('.basket-container');
+const mapPopUp = document.querySelector('.map-container');
+const timeButton = document.querySelector('.header__present-time');
+const deliveryPopUp = document.querySelector('.delivery-container');
+const deliveryForm = document.querySelector('.delivery');
+const deliveryButton = document.querySelector('.present___sum-button-element');
+const backToBasketButton = document.querySelector('.delivery__back');
+const timeDeliveryButton = document.querySelector('.delivery__time-button');
+const timePopUp = document.querySelector('.miniform-container');
+const deliverySubmitButton = document.querySelector('.delivery__take-order');
+const thanksOrderPopUp = document.querySelector('.order__accepted-container');
+const overlays = document.querySelectorAll('.overlay');
+const placePopUp = document.querySelector('.place-container');
+const placeForm = document.querySelector('.place');
 const forms = Array.from(document.forms);
+const overlaysArr = Array.from(overlays);
+
 forms.forEach(itemForm =>{
-    itemForm.classList.add(classPopUpClose);
-    console.log(itemForm);
     itemForm.addEventListener('submit', function (evt){
         evt.preventDefault();
     });
+});
+
+overlaysArr.forEach(overlayItem =>{
+    overlayItem.addEventListener('click', (evt) =>{
+        closePopUp(evt.target.closest('.popUp_is-open'));
+    });
 })
+
+function checkTime(){
+    let nowDate = new Date();
+    if(nowDate.getHours() >= 22 || nowDate.getHours() <= 10){
+        nowClosePopUp.classList.remove(classPopUpClose);
+        nowClosePopUp.classList.add(classPopUpOpen);
+    }
+}
+
+checkTime();
 
 function addEventListenersForCross(){
     crossArr = Array.from(crossButtons);
@@ -35,19 +64,19 @@ function addEventListenersForCross(){
 
 addEventListenersForCross();
 
-function openPopUp(prevSelector, selectorPopUp){
-    if(prevSelector != 0){
-        console.log('!!!');
-        prevSelector.classList.remove(classPopUpOpen);
-        prevSelector.classList.add(classPopUpClose);
-        console.log(prevSelector);
-    }
-    selectorPopUp.classList.remove(classPopUpClose);
-    selectorPopUp.classList.add(classPopUpOpen);
+function openPopUp(PopUp){
+    PopUp.classList.remove(classPopUpClose);
+    PopUp.classList.add(classPopUpOpen);
+    openPopUps = Array.from(document.querySelectorAll('.popUp_is-open'));
+    openPopUps.forEach(popUpItem =>{
+        if(popUpItem != PopUp){
+            popUpItem.classList.remove(classPopUpOpen);
+            popUpItem.classList.add(classPopUpClose);
+        }
+    });  
 }
 
 function closePopUp(ActivePopUp){
-    console.log(ActivePopUp);
     ActivePopUp.classList.remove(classPopUpOpen);
     ActivePopUp.classList.add(classPopUpClose);
 }
@@ -90,14 +119,32 @@ class addElement{
     }
 }
 
+
+
 const classP = new addElement(elementInfo);
 classP.addElement();
 
 
-buttonAut.addEventListener('click', () => openPopUp(0, phonePopUp));
-phoneForm.addEventListener('submit', () => openPopUp(phonePopUp, codePopUp));
-codeForm.addEventListener('submit', () => openPopUp(codePopUp, cabinetContainer));
-basketButton.addEventListener('click', () => openPopUp(0, basketContainer));
+buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
+phoneForm.addEventListener('submit', () => openPopUp(codePopUp));
+codeForm.addEventListener('submit', () => openPopUp(cabinetContainer));
+basketButton.addEventListener('click', () => openPopUp(basketContainer));
+timeButton.addEventListener('click',() => openPopUp(mapPopUp));
+deliveryButton.addEventListener('click', () => openPopUp(deliveryPopUp));
+backToBasketButton.addEventListener('click', () => openPopUp(basketContainer));
+timeDeliveryButton.addEventListener('click' , () => {
+    timePopUp.classList.remove(classPopUpClose);
+    timePopUp.classList.add('miniform_is-open');
+});
+deliveryForm.addEventListener('submit', () => openPopUp(placePopUp));
+placeForm.addEventListener('submit', () =>openPopUp(thanksOrderPopUp));
+
+
+
+
+
+
+
 
 
 
