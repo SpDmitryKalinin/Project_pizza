@@ -33,6 +33,11 @@ const forms = Array.from(document.forms);
 const overlaysArr = Array.from(overlays);
 const heroBannerSlider = document.querySelector('.slider-hero');
 const heroBannerTemplate = document.querySelector('.hero-template-element').content;
+const basketSliderOther = document.querySelector('.slider-basket-other');
+const basketSliderPresent = document.querySelector('.slider-basket-present');
+const basketTemplateElement = document.querySelector('.basket-template-element').content;
+
+
 
 forms.forEach(itemForm =>{
     itemForm.addEventListener('submit', function (evt){
@@ -68,8 +73,13 @@ function addEventListenersForCross(){
 addEventListenersForCross();
 
 function openPopUp(PopUp){
+    
     PopUp.classList.remove(classPopUpClose);
     PopUp.classList.add(classPopUpOpen);
+    if(PopUp.classList.contains('basket-container')){
+        sliderBasket.update();
+        sliderPresent.update();
+    }
     openPopUps = Array.from(document.querySelectorAll('.popUp_is-open'));
     openPopUps.forEach(popUpItem =>{
         if(popUpItem != PopUp){
@@ -78,6 +88,8 @@ function openPopUp(PopUp){
         }
     });  
 }
+
+
 
 function closePopUp(ActivePopUp){
     ActivePopUp.classList.remove(classPopUpOpen);
@@ -232,12 +244,74 @@ const sliderPopular = new Swiper(sliderPopularSelector,{
             slidesPerView: 3,
         }
     }
+});
+
+
+//Mobile
+const sliderMobile = new Swiper('.sliderHeaderMobile',{
+    freeMode: true,
+    slidesPerView: 3.5,
+    spaceBetween: 10,
 })
+
+
+
+//Slider in basket
+const sliderBasket = new Swiper('.swiper-basket', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    slidesPerView: 2.5,
+    freeMode: true
+})
+
+//Slider in basket-presents
+const sliderPresent = new Swiper('.swiper-basket-present',{
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    slidesPerView: 2.5,
+    freeMode: true
+})
+
+//Шаблон для добавления элементов в слайдеры
+
+const slideForBasket ={
+    template: basketTemplateElement,
+    imageSrc: './images/55173bcc5a91065c988ab3de8023bcff 1.png',
+    title: 'Coca-cola',
+    price: '119'
+}
+
+class addBasket{
+    constructor({template, imageSrc, title, price}){
+        this.template = template;
+        this.imageSrc = imageSrc;
+        this.title = title;
+        this.price = price;
+    }
+    initItem(){
+        const cloneTemplate = this.template.cloneNode(true);
+        cloneTemplate.querySelector('.basket__product-title').textContent = this.title;
+        cloneTemplate.querySelector('.basket__product-image').src = this.imageSrc;
+        cloneTemplate.querySelector('.basket__product-button').textContent = this.price + " ₽";
+        return cloneTemplate;
+    }
+    addItem(container){
+        container.prepend(this.initItem())
+    }
+}
+
+const test = new addBasket(slideForBasket);
+for(let i=0; i<10; i++){
+    test.addItem(basketSliderPresent);
+    test.addItem(basketSliderOther);
+}
 
 const arrBasketButtons = Array.from(basketButton);
 arrBasketButtons.forEach(button =>{
     button.addEventListener('click', () => openPopUp(basketContainer));
 });
+
+
 
 
 buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
