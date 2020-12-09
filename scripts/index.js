@@ -13,7 +13,7 @@ const classPopUpClose = 'popUp_is-close';
 const buttonAut = document.querySelector('.header__button-autoriz');
 const templateElement = document.querySelector('.template-element').content;
 const elementsContainer = document.querySelector('.elements');
-const basketButton = document.querySelector('.header__basket');
+const basketButton = document.querySelectorAll('.header__basket');
 const basketContainer = document.querySelector('.basket-container');
 const mapPopUp = document.querySelector('.map-container');
 const timeButton = document.querySelector('.header__present-time');
@@ -28,8 +28,11 @@ const thanksOrderPopUp = document.querySelector('.order__accepted-container');
 const overlays = document.querySelectorAll('.overlay');
 const placePopUp = document.querySelector('.place-container');
 const placeForm = document.querySelector('.place');
+const templatePopular = document.querySelector('.popular-template-element');
 const forms = Array.from(document.forms);
 const overlaysArr = Array.from(overlays);
+const heroBannerSlider = document.querySelector('.slider-hero');
+const heroBannerTemplate = document.querySelector('.hero-template-element').content;
 
 forms.forEach(itemForm =>{
     itemForm.addEventListener('submit', function (evt){
@@ -81,16 +84,18 @@ function closePopUp(ActivePopUp){
     ActivePopUp.classList.add(classPopUpClose);
 }
 
+
+//Шаблон добавления элемента в меню
 const elementInfo = {
     menuSelector: '.menu',
     templateElement: templateElement,
-    picSrc: 'https://avatars.mds.yandex.net/get-zen_doc/1534997/pub_5d4d3a7714f98000ad66a8a8_5d4d40491e8e3f00ae5d93a4/scale_1200',
+    picSrc: "images/сливочный1.png",
     textTitle: 'Пицца',
     promoToggle: true,
     newToggle: true,
     textDescription: 'Что-что, что-то',
-    textMass: '590 гр',
-    price: '300'
+    textMass: '590',
+    price: '300',
 }
 
 class addElement{
@@ -110,8 +115,8 @@ class addElement{
         cloneTemplate.querySelector('.element__title').textContent = this.textTitle;
         cloneTemplate.querySelector('.element__description').textContent = this.textDescription;
         cloneTemplate.querySelector('.element__image').src = this.picSrc;
-        cloneTemplate.querySelector('.element__price').textContent = this.price;
-        cloneTemplate.querySelector('.element__mass').textContent = this.textMass;
+        cloneTemplate.querySelector('.element__price').textContent = this.price + " ₽";
+        cloneTemplate.querySelector('.element__mass').textContent = this.textMass + ' гр';
         return cloneTemplate;
     }
     addElement(){
@@ -119,16 +124,126 @@ class addElement{
     }
 }
 
+//Добавления 15 элементов в меню с классом "menu"
+for(let i = 0; i<15; i++){
+    const classP = new addElement(elementInfo);
+    classP.addElement();
+}
+
+//Шаблон добавления элемента в слайдер popular
+const popularElementInfo = {
+    templatePopularElement: document.querySelector('.popular-template-element').content,
+    popularImgSrc: "images/сливочный1.png",
+    popularTitleText: 'Title',
+    popularMassText: '110',
+    popularPriceText: '350'
+}
+
+class addPopularElement{
+    constructor({templatePopularElement, popularImgSrc, popularTitleText, popularMassText, popularPriceText}){
+        this.template = templatePopularElement;
+        this.imgsrc = popularImgSrc;
+        this.titleText = popularTitleText;
+        this.massText = popularMassText;
+        this.priceText = popularPriceText;
+    }
+    _initPopularElement(){
+        const cloneTemplate = this.template.cloneNode(true);
+        cloneTemplate.querySelector('.popular__img').src = this.imgsrc;
+        cloneTemplate.querySelector('.popular__item-title').textContent = this.titleText;
+        cloneTemplate.querySelector('.popular__mass').textContent = this.massText + ' гр';
+        cloneTemplate.querySelector('.popular__price').textContent = this.priceText + " ₽";
+        return cloneTemplate;
+    }
+    addPopularElement(){
+        document.querySelector('.slider-popular').append(this._initPopularElement());
+    }
+}
+
+//Добавление 10 элементов в слайдер popular
+for(let i=0; i<10; i++){
+    const testPopularClassAdd = new addPopularElement(popularElementInfo);
+    testPopularClassAdd.addPopularElement();
+}
+
+//SWIPER hero
+//==================================================
+const slider = document.querySelector('.swiper-hero');
+
+const mySlider = new Swiper(slider, {
+    spaceBetween: 40,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    centeredSlides: true,
+    breakpoints:{
+        500:{
+            slidesPerView: 1,
+        },
+        1350:{
+            slidesPerView: 1.2,
+        },
+        1400:{
+            slidesPerView: 1.3,
+        },
+        1600:{
+            slidesPerView: 1.5,
+        }
+    }
+})
 
 
-const classP = new addElement(elementInfo);
-classP.addElement();
+//Шаблон добавления баннеров в hero
+const heroImgSrc = 'images/Rectangle3.png';
+
+function addBanner(heroImgSrc){
+    const cloneTemplateHeroBanner = heroBannerTemplate.cloneNode(true);
+    cloneTemplateHeroBanner.querySelector('.slide').setAttribute('style', `background-image: url(${heroImgSrc})`);
+    mySlider.appendSlide(cloneTemplateHeroBanner);
+}
+
+for(let i=0; i<10; i++){
+    addBanner(heroImgSrc);
+}
+
+//===================================================
+
+
+//Swiper popular
+
+const sliderPopularSelector = document.querySelector('.swiper-popular');
+
+const sliderPopular = new Swiper(sliderPopularSelector,{
+    freeMode: true,
+    slidesPerView: 4.5,
+    spaceBetween: 50,
+    breakpoints:{
+        882:{
+            slidesPerView: 2,
+        },
+        1024:{
+            slidesPerView: 3,
+        },
+        1400:{
+            slidesPerView: 3,
+        },
+        1600:{
+            slidesPerView: 3,
+        }
+    }
+})
+
+const arrBasketButtons = Array.from(basketButton);
+arrBasketButtons.forEach(button =>{
+    button.addEventListener('click', () => openPopUp(basketContainer));
+});
 
 
 buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
 phoneForm.addEventListener('submit', () => openPopUp(codePopUp));
 codeForm.addEventListener('submit', () => openPopUp(cabinetContainer));
-basketButton.addEventListener('click', () => openPopUp(basketContainer));
+
 timeButton.addEventListener('click',() => openPopUp(mapPopUp));
 deliveryButton.addEventListener('click', () => openPopUp(deliveryPopUp));
 backToBasketButton.addEventListener('click', () => openPopUp(basketContainer));
@@ -138,13 +253,3 @@ timeDeliveryButton.addEventListener('click' , () => {
 });
 deliveryForm.addEventListener('submit', () => openPopUp(placePopUp));
 placeForm.addEventListener('submit', () =>openPopUp(thanksOrderPopUp));
-
-
-
-
-
-
-
-
-
-

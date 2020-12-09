@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="500, initial-scale=1">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <title>Суши - главная</title>
     </head>
 
@@ -34,13 +35,54 @@
                     <button class="header__button-autoriz">Войти</button>
                 </div>
                 <div class="header__mobile">
-                    <nav class="navigation">
-                        <button type="button" class="navigation__element navigation__element_active">Роллы и суши</button>
-                        <button type="button" class="navigation__element">Тёплые роллы</button>
-                        <button type="button" class="navigation__element">Комбо и сеты</button>
-                        <button type="button" class="navigation__element">Пицца</button>
-                        <button type="button" class="navigation__element">Снеки и десерты</button>
-                    </nav>
+                        <div id="slider" class="slider slider_drag">
+                          <div id="sliderPosition" class="sliderPosition slider-mobile">
+                              <div class="slide">
+                                <button class="header__basket">
+                                    <div class="header__basket-border">
+                                        <p class="header__basket-price">1450 ₽ </p>
+                                    </div>
+                                </button>>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Роллы и суши</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Тёплые роллы</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Комбо и сеты</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Пицца</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Снеки и десерты</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Салаты и напитки</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">Акции</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element">О нас</button>
+                              </div>
+
+                              <div class="slide">
+                                <button type="button" class="navigation__element"><span class="navigation__element-red">&#9679;</span> Прямой эфир</button>
+                              </div>
+
+                          </div>
+                        </div>
                 </div>
             </header>
 
@@ -57,47 +99,30 @@
             </nav>
 
             <main>
-                <section class="wrapeer">
-                    
+                <section class="hero-container">
+
+                    <!-- Slider main container -->
+                    <div class="swiper-container swiper-hero">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper slider-hero">
+                            <div class="swiper-slide slide"></div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+
+                      <div id="slider" class="slider slider_swipe">
+                        <div id="sliderPosition" class="sliderPosition">
+                        </div>
+                      </div>
                 </section>
-
                 <section class="popular">
-                    <h1 class="popular__title">Новое и популярное</h1>
-                    <div class="popular__cards">
-                        <div class="popular__card">
-                            <div class="popular__card-image">
-                                <img class="popular__card-real-image" src="images/цезарь1.png" alt="Цезарь">
-                            </div>
-
-                            <div class="popular__card-info">
-                                <h2 class="popular__card-info-title">Цезарь</h2>
-                                <p class="popular__card-weight">370 гр.</p>
-                                <button class="popular__button-price" type="button">359 ₽</button>
-                            </div>
-                        </div>
-                        
-                        <div class="popular__card">
-                            <div class="popular__card-image">
-                                <img class="popular__card-real-image" src="images/сливочный1.png" alt="Сливочный лосось">
-                            </div>
-
-                            <div class="popular__card-info">
-                                <h2 class="popular__card-info-title">Сливочный лосось</h2>
-                                <p class="popular__card-weight">370 гр.</p>
-                                <button class="popular__button-price" type="button">359 ₽</button>
-                            </div>
-                        </div>
-
-                        <div class="popular__card">
-                            <div class="popular__card-image">
-                                <img class="popular__card-real-image" src="images/салатцезарь1.png" alt="Цезарь">
-                            </div>
-
-                            <div class="popular__card-info">
-                                <h2 class="popular__card-info-title">Цезарь</h2>
-                                <p class="popular__card-weight">370 гр.</p>
-                                <button class="popular__button-price" type="button">359 ₽</button>
-                            </div>
+                    <h2 class="popular__title">Новое и популярное</h2>
+                    <div class="swiper-container swiper-popular">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper slider-popular">
                         </div>
                     </div>
                 </section>
@@ -105,54 +130,7 @@
                 <section class="menu">
                     <h2 class="menu__title">Название меню</h2>
                     <section class="elements">
-                        <div class="element">
-                            <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <div class="element__about">
-                                <div class="element__message">
-                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
-                                </div>
-                                <h3 class="element__title">Сливочный лосось</h3>
-                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                                <div class="element__info">
-                                    <p class="element__price">359 &#8381;</p>
-                                    <p class="element__mass">324 гр</p>
-                                    <button class="element__submit">Выбрать</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <div class="element__about">
-                                <div class="element__message">
-                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
-                                </div>
-                                <h3 class="element__title">Сливочный лосось</h3>
-                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                                <div class="element__info">
-                                    <p class="element__price">359 &#8381;</p>
-                                    <p class="element__mass">324 гр</p>
-                                    <button class="element__submit">Выбрать</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <img class="element__image" src="images/6-1300.jpg" alt="">
-                            <div class="element__about">
-                                <div class="element__message">
-                                    <div class="element__new element__message-item"><p class="element__message-text">Новинка</p></div>
-                                    <div class="element__promo element__message-item"><p class="element__message-text">Акция</p></div>
-                                </div>
-                                <h3 class="element__title">Сливочный лосось<span class="element__mass-mobile element__mass">324 гр</span></h3>
-                                <p class="element__description">Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут.</p>
-                                <div class="element__info">
-                                    <p class="element__price">359 &#8381;</p>
-                                    <p class="element__mass">324 гр</p>
-                                    <button class="element__submit">Выбрать</button>
-                                </div>
-                            </div>
-                        </div>
+    
                     </section>
                 </section>
                 <section class="aboutUs">
@@ -641,6 +619,27 @@
                     </div>
                 </div>
             </template>
+
+            <template class="popular-template-element">
+                <div class="swiper-slide slide">
+                    <div class="popular__item">
+                        <img class="popular__img" src="images/сливочный1.png" alt="picture">
+                        <div class="popular__info">
+                            <h3 class="popular__item-title">Сливочный лосось</h3>
+                            <p class="popular__mass">370 гр</p>
+                            <button class="popular__button">
+                                <p class="popular__price">300 Р</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template class="hero-template-element">
+                <div class="swiper-slide slide"></div>
+            </template>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="scripts/index.js"></script>
     </body>
 </html>

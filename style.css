@@ -38,7 +38,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  z-index: 20;
+  z-index: 60!important;
 }
 
 .map{
@@ -72,13 +72,8 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 882px){
-  .miniform_is-open{
-    right: calc(3% + (((100vw - 670px)/2)));
-}
-}
 
-/*end*/
+
 
 .place__inputs-styles-bord{
     border: 1.17518px solid #FFB800;
@@ -107,9 +102,6 @@ button{
     cursor: pointer;
 }
 
-@media screen and (max-width: 1280px){
-    
-}
 
 @media screen and (max-width: 882px){
     .page{
@@ -125,6 +117,8 @@ button{
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    overflow: hidden;
+    background-color: RGBA(255,255,255,0.5);
 }
 /*Хедер*/
 .header{
@@ -136,8 +130,14 @@ button{
 
 @media screen and (max-width: 1112px){
     .header{
-        margin-left: 3%;
-        margin-right: 3%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+}
+
+@media screen and (max-width: 882px){
+    .header{
+      align-items: center;
     }
 }
 
@@ -182,6 +182,8 @@ button{
         display: flex;
         margin: 0px 10px 0 7px;
         align-items: center;
+        position: relative;
+        background-color: white;
     }
 }
 
@@ -401,114 +403,171 @@ button{
     color: red;
 }
 
-/*Баннер*/
-
-@media screen and (max-width: 882px){
-    .wrapeer{
-        display: none;
-    }
-
-}
-
-.wrapeer{
-    width: 100%;
-    height: 400px;
-    background-color: red;
-}
-
-/*Популярное*/
+/*Cлайдер popular*/
 .popular{
-    max-width: 1112px;
-    margin: 0 auto 0 auto;
-    display: flex;
-    flex-direction: column;
+  margin-left: auto;
+  margin: auto;
+  max-width: 1112px;
 }
 
 @media screen and (max-width: 1112px){
-    .popular{
-        margin-left: 3%;
-        margin-right: 3%;
-    }
+  .popular{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 }
 
 @media screen and (max-width: 882px){
-    .popular{
-        display: none;
-    }
+  .popular{
+    display: none;
+  }
+}
+
+
+.swiper-popular{
+  overflow: visible!important;
 }
 
 .popular__title{
-    font-family: 'Montserrat';
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
-    margin-top: 92px;
-    margin-bottom: 23px;
+  display: block;
+  max-width: 1112px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  margin-top: 100px;
+  margin-bottom: 25px;
 }
 
-.popular__cards{
-    display: flex;
-    flex-direction: row;
-    
+.popular__item{
+  width: 350px;
+  height: 170px;
+  display: flex;
+  box-shadow: 0px 6px 29px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
 }
 
-.popular__card{
-    display: flex;
-    width: 350px;
-    padding-left: 2%;
-    padding-right: 2%;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 6px 29px rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
-    z-index: 1;
-    position: relative;
-    flex-direction: row;
-    margin-right: 30px;
+.popular__img{
+  object-fit: fill;
+  align-self: center;
+  width: 130px;
+  height: 130px;
+  margin-right: 25px;
 }
 
-.popular__card-image{
-    position: relative;
-    z-index: 3;
-    margin-left: 7px;
-    align-self: center;
+.popular__info{
+  display: flex;
+  width: 150px;
+  text-align: left;
+  margin-top: 25px;
+  flex-direction: column;
+  color: black;
+  align-items: center;
 }
 
-.popular__card-info-title{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    margin-left: 10px;
-    margin-top: 27px;
+.popular__item-title{
+  font-family: 'Roboto';
+  align-self: flex-start;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3A3A3A;
 }
 
-.popular__card-info{
-    width: 140px;
+.popular__mass{
+  margin-top: 8px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8C8C8C;
+  align-self: flex-start;
 }
 
-.popular__card-weight{
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    color: #8C8C8C;
-    margin-left: 10px;
-    margin-top: 8px;
+.popular__button{
+  margin-top: auto;
+  margin-bottom: 25px;
+  padding: 6px 25px;
+  background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;
+  border-radius: 7px;
+  width: 100px;
 }
 
-.popular__button-price{
-    border: none;
-    outline: none;
-    background: linear-gradient(180deg, #69B902 0%, #95CA3E 100%), #8DCD31;;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #FFFFFF;
-    width: 91px;
-    border-radius: 7px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-left: 10px;
-    margin-top: 41px;
+.popular__button:hover{
+  background: linear-gradient(180deg, #7EDD05 0%, #9BDC31 100%), #8DCD31;
 }
+
+.popular__price{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.popular .btn{
+  display: none;
+}
+
+/*Hero слайдер*/
+
+.hero-container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+.hero-container .swiper-container{
+  width: 100%;
+  overflow: visible;
+}
+
+
+@media screen and (max-width: 1112px){
+  .hero-container{
+    width: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+
+@media screen and (max-width: 882px){
+  .hero-container{
+    display: none;
+  }
+}
+
+.hero-container .slide{
+  height: 430px;
+  background-image: url(images/Rectangle3.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hero-container .swiper-slide-next{
+  opacity: 0.5;
+}
+
+.hero-container .swiper-slide-prev{
+  opacity: 0.5;
+}
+
+.hero-slider__item{
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+}
+
+
 /*Грид меню*/
 
 .menu{
@@ -552,7 +611,7 @@ button{
     width: 100%;
     column-gap: 23px;
     row-gap: 70px;
-    grid-template-columns: repeat(auto-fill, 355px);
+    grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
 }
 
 @media screen and (max-width: 882px){
