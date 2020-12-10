@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: #3A3A3A;
+}
+
 /*new*/
 .cross{
   background-image: url(images/cross.png);
@@ -120,12 +125,14 @@ button{
     overflow: hidden;
     background-color: RGBA(255,255,255,0.5);
 }
+
 /*Хедер*/
 .header{
     max-width: 1112px;
     margin: 21px auto 0 auto;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1112px){
@@ -173,6 +180,10 @@ button{
     .header__mobile{
         display:flex;
         width: calc(100% - 150px);
+    }
+
+    .header__mobile .slide{
+      display: flex;
     }
 }
 
@@ -367,6 +378,19 @@ button{
         margin-left: 0;
         margin-right: 0;
     }
+
+    .header__mobile a{
+      display: flex;
+    }
+
+    .header__mobile a{
+      margin: auto;
+    }
+
+    .header__mobile a button{
+      white-space: nowrap;
+      margin: auto;
+    }
 }
 
 .navigation__element{
@@ -377,13 +401,13 @@ button{
     font-size: 12px;
     font-weight: normal;
     color: #3A3A3A;
+    padding: 7px 10px;
 }
 
 @media screen and (max-width: 882px){
     .navigation__element{
         font-size: 10px;
         line-height: 10px;
-        padding: 7px 10px;
         background-color:#EFEFEF;
         border-radius: 369px;
     }
@@ -622,7 +646,6 @@ button{
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 40px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 882px){
@@ -1778,6 +1801,12 @@ input[type="number"]:focus {
     z-index: 10;
   }
 
+  .cabinet__orders{
+    max-height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
   .cabinet__title{
     font-weight: 500;
     font-size: 22px;
@@ -1906,7 +1935,9 @@ input[type="number"]:focus {
   }
 
   /*Корзина*/
-
+  .basket-container{
+    font-family: 'Roboto';
+  }
   .basket{
     position: relative;
     display: flex;
@@ -1923,13 +1954,17 @@ input[type="number"]:focus {
     top: 10px;
     left: 463px;
   }
-
+  .basket__orders{
+    overflow: scroll;
+    overflow-x:hidden;
+  }
   .basket__container{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
     margin-left: 17px;
     margin-right: 17px;
+    height: 500px;
   }
 
   .basket__title{
@@ -1958,12 +1993,13 @@ input[type="number"]:focus {
     line-height: 16px;
   }
 
-  .basket__order-part-one{
+  .basket__order-item{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-   
+    padding-right: 20px;
+    width: 100%;
   }
 
   .basket__order-image{
@@ -2021,7 +2057,7 @@ input[type="number"]:focus {
   }
 
   .basket__borderline{
-    width: 470px;
+    width: 90%;
     border: 1px solid #A0A0A0;
     margin-top: 15px;
   }
@@ -2085,7 +2121,6 @@ input[type="number"]:focus {
     flex-direction: column;
     justify-content: space-between;
     margin-left: 20px;
-    margin-top: 15px;
     margin-bottom: 10px;
   }
 
@@ -2332,3 +2367,63 @@ input[type="number"]:focus {
 }
 
 
+/*Actions*/
+
+.actions{
+}
+
+.actions__title{
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 46px 0 26px 0;
+}
+
+.actions__cards{
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions__card-title{
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 27px 0 3px 0;
+}
+
+.actions__card{
+  width: 31.8%;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+}
+
+.actions__card-container{
+  width: 89.6%;
+  margin: 15px auto 29px auto;
+}
+
+.actions__card-image{
+  width: 100%;
+}
+
+.actions__card-date{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.actions__card-text{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+
+.aboutUs-disabled-window{
+  display: none;
+}
+
+/*aboutUs__button_active*/

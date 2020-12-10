@@ -36,7 +36,22 @@ const heroBannerTemplate = document.querySelector('.hero-template-element').cont
 const basketSliderOther = document.querySelector('.slider-basket-other');
 const basketSliderPresent = document.querySelector('.slider-basket-present');
 const basketTemplateElement = document.querySelector('.basket-template-element').content;
+const orderContainer = document.querySelector('.basket__orders');
+const orderTemplate = document.querySelector('.basket-order-template').content;
+const ordersHistory = document.querySelector('.cabinet__orders');
+const orderHistoryTemplate = document.querySelector('.lc-template').content;
+const orderHistoryItem = document.querySelector('.lc-item').content;
 
+const goodPeopleCadrs = document.querySelector('.boutUas__cadrs');
+const goodPeopleAction = document.querySelector('.aboutUs__action');
+
+const buttonNavigationAction = document.querySelector('.navigation__action');
+const buttonNavigationAbout = document.querySelector('.navigation__about');
+
+buttonNavigationAbout.addEventListener('click', cadrsFunction);
+buttonNavigationAction.addEventListener('click', actionFunction)
+goodPeopleCadrs.addEventListener('click', cadrsFunction)
+goodPeopleAction.addEventListener('click', actionFunction)
 
 
 forms.forEach(itemForm =>{
@@ -59,7 +74,23 @@ function checkTime(){
     }
 }
 
-checkTime();
+checkTime(); //Проверяет время работы
+
+function cadrsFunction(){
+    const classDisabledWindow = 'aboutUs-disabled-window';
+    goodPeopleCadrs.classList.add('aboutUs__button_active');
+    goodPeopleAction.classList.remove('aboutUs__button_active')
+    document.querySelector('.actions').classList.add(classDisabledWindow);
+    document.querySelector('.cadrs').classList.remove(classDisabledWindow);
+}
+
+function actionFunction(){
+    const classDisabledWindow = 'aboutUs-disabled-window';
+    goodPeopleAction.classList.add('aboutUs__button_active');
+    goodPeopleCadrs.classList.remove('aboutUs__button_active')
+    document.querySelector('.actions').classList.remove(classDisabledWindow);
+    document.querySelector('.cadrs').classList.add(classDisabledWindow);
+}
 
 function addEventListenersForCross(){
     crossArr = Array.from(crossButtons);
@@ -98,17 +129,7 @@ function closePopUp(ActivePopUp){
 
 
 //Шаблон добавления элемента в меню
-const elementInfo = {
-    menuSelector: '.menu',
-    templateElement: templateElement,
-    picSrc: "images/сливочный1.png",
-    textTitle: 'Пицца',
-    promoToggle: true,
-    newToggle: true,
-    textDescription: 'Что-что, что-то',
-    textMass: '590',
-    price: '300',
-}
+
 
 class addElement{
     constructor({menuSelector, templateElement, picSrc, textTitle, promoToggle, newToggle, textDescription, textMass, price}){
@@ -136,11 +157,7 @@ class addElement{
     }
 }
 
-//Добавления 15 элементов в меню с классом "menu"
-for(let i = 0; i<15; i++){
-    const classP = new addElement(elementInfo);
-    classP.addElement();
-}
+
 
 //Шаблон добавления элемента в слайдер popular
 const popularElementInfo = {
@@ -178,8 +195,7 @@ for(let i=0; i<10; i++){
     testPopularClassAdd.addPopularElement();
 }
 
-//SWIPER hero
-//==================================================
+//slider Hero
 const slider = document.querySelector('.swiper-hero');
 
 const mySlider = new Swiper(slider, {
@@ -199,8 +215,17 @@ const mySlider = new Swiper(slider, {
         1400:{
             slidesPerView: 1.3,
         },
+        1500:{
+            slidesPerView: 1.4,
+        },
         1600:{
             slidesPerView: 1.5,
+        },
+        1800:{
+            slidesPerView: 1.6,
+        },
+        1900:{
+            slidesPerView: 1.7
         }
     }
 })
@@ -219,60 +244,7 @@ for(let i=0; i<10; i++){
     addBanner(heroImgSrc);
 }
 
-//===================================================
-
-
-//Swiper popular
-
-const sliderPopularSelector = document.querySelector('.swiper-popular');
-
-const sliderPopular = new Swiper(sliderPopularSelector,{
-    freeMode: true,
-    slidesPerView: 4.5,
-    spaceBetween: 50,
-    breakpoints:{
-        882:{
-            slidesPerView: 2,
-        },
-        1024:{
-            slidesPerView: 3,
-        },
-        1400:{
-            slidesPerView: 3,
-        },
-        1600:{
-            slidesPerView: 3,
-        }
-    }
-});
-
-
-//Mobile
-const sliderMobile = new Swiper('.sliderHeaderMobile',{
-    freeMode: true,
-    slidesPerView: 3.5,
-    spaceBetween: 10,
-})
-
-
-
-//Slider in basket
-const sliderBasket = new Swiper('.swiper-basket', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    slidesPerView: 2.5,
-    freeMode: true
-})
-
-//Slider in basket-presents
-const sliderPresent = new Swiper('.swiper-basket-present',{
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    slidesPerView: 2.5,
-    freeMode: true
-})
-
-//Шаблон для добавления элементов в слайдеры
+//Шаблон для добавления элементов в слайдеры в Корзине
 
 const slideForBasket ={
     template: basketTemplateElement,
@@ -306,14 +278,145 @@ for(let i=0; i<10; i++){
     test.addItem(basketSliderOther);
 }
 
+//Шаблон для добавления элементов в заказ
+
+const orderInfo = {
+    template: orderTemplate,
+    imageSrc: "./images/сливочный1.png",
+    title: "Сливочный лосось",
+    discription: "Соус цезарь, лосось терияки, маслины, сыр творожный,  сыр моцарелла, соус терияки, кунжут",
+    price: 1540,
+    amount: 1
+}
+
+class AddOrder{
+    constructor({template, imageSrc, title, discription, price, amount}){
+        this.template = template;
+        this.imageSrc = imageSrc;
+        this.title = title;
+        this.discription = discription;
+        this.price = price;
+        this.amount = amount;
+    }
+
+    _orderInit(){
+        const templateCopy = this.template.cloneNode(true);
+        templateCopy.querySelector('.basket__order-image').src = this.imageSrc;
+        templateCopy.querySelector('.basket__order-title').textContent = this.title;
+        templateCopy.querySelector('.basket__order-text').textContent = this.discription;
+        templateCopy.querySelector('.basket__order-sum').textContent = (this.price * this.amount) + " ₽";
+        templateCopy.querySelector('.basket__order-quant').textContent = this.amount;
+        return templateCopy;
+    }
+
+    addOrderInContainer(container){
+        container.prepend(this._orderInit());
+    }
+}
+
+const testOrder = new AddOrder(orderInfo);
+
+for(let i=0; i<10; i++){
+    testOrder.addOrderInContainer(orderContainer);
+}
+
+//Шаблон добавления в историю заказов
+
+const orderHistoryInfo = {
+    template: orderHistoryTemplate,
+    templateItem: orderHistoryItem,
+    date: `12.10.2020`,
+    orders: ['Пицца Цезарь', 'Салат Цезарь', 'Другая пицца'],
+    price: '1540'
+}
+class AddOrderInHistory{
+    constructor({template, templateItem, date, orders, price}){
+        this.template = template;
+        this.templateItem = templateItem;
+        this.date = date;
+        this.orders = orders;
+        this.price = price;
+    }
+    _initOrderHistory(){
+        const templateCopy = this.template.cloneNode(true);
+        console.log(this.orders.length);
+        templateCopy.querySelector('.cabinet__order-subtitle').textContent = this.date;
+        for(let i=0; i<this.orders.length; i++){
+            const templateItemCopy = this.templateItem.cloneNode(true);
+            templateItemCopy.querySelector('.cabinet__order-name').textContent = this.orders[i]
+            templateCopy.querySelector('.cabinet__order-names').prepend(templateItemCopy);
+        }
+        templateCopy.querySelector('.cabinet__order-price').textContent = this.price;
+        return templateCopy;
+    }
+    addOrderInContainer(container){
+        container.prepend(this._initOrderHistory());
+    }
+}
+
+
+
+const testHistory = new AddOrderInHistory(orderHistoryInfo);
+
+
+for(let i=0;i<5; i++){
+    testHistory.addOrderInContainer(ordersHistory);
+}
+//Slider popular
+
+const sliderPopularSelector = document.querySelector('.swiper-popular');
+
+const sliderPopular = new Swiper(sliderPopularSelector,{
+    freeMode: true,
+    slidesPerView: 4.5,
+    spaceBetween: 50,
+    breakpoints:{
+        882:{
+            slidesPerView: 2,
+        },
+        1024:{
+            slidesPerView: 2.5,
+        },
+        1400:{
+            slidesPerView: 3,
+        },
+        1600:{
+            slidesPerView: 3,
+        }
+    }
+});
+
+
+//Slider mobile
+const sliderMobile = new Swiper('.sliderHeaderMobile',{
+    freeMode: true,
+    slidesPerView: 2.5,
+    spaceBetween: 30,
+})
+
+//Slider in basket
+const sliderBasket = new Swiper('.swiper-basket', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    slidesPerView: 2.5,
+    freeMode: true
+})
+
+//Slider in basket-presents
+const sliderPresent = new Swiper('.swiper-basket-present',{
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    slidesPerView: 2.5,
+    freeMode: true
+})
+
+
+
+
 const arrBasketButtons = Array.from(basketButton);
 arrBasketButtons.forEach(button =>{
     button.addEventListener('click', () => openPopUp(basketContainer));
 });
-
-
-
-
 buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
 phoneForm.addEventListener('submit', () => openPopUp(codePopUp));
 codeForm.addEventListener('submit', () => openPopUp(cabinetContainer));
@@ -327,3 +430,110 @@ timeDeliveryButton.addEventListener('click' , () => {
 });
 deliveryForm.addEventListener('submit', () => openPopUp(placePopUp));
 placeForm.addEventListener('submit', () =>openPopUp(thanksOrderPopUp));
+
+
+
+
+//*Инициализация меню*//
+
+const pizzaInfo = {
+    menuSelector: '.pizza',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classPizza = new addElement(pizzaInfo);
+    classPizza.addElement();
+}
+
+const rolsInfo = {
+    menuSelector: '.rols',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classRols = new addElement(rolsInfo);
+    classRols.addElement();
+}
+
+const warnRolsInfo = {
+    menuSelector: '.warn-rols',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classWarnRols = new addElement(warnRolsInfo);
+    classWarnRols.addElement();
+}
+
+const comboInfo = {
+    menuSelector: '.combo',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classCombo = new addElement(comboInfo);
+    classCombo.addElement();
+}
+
+const snackInfo = {
+    menuSelector: '.snack',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classSnack = new addElement(snackInfo);
+    classSnack.addElement();
+}
+
+const salatInfo = {
+    menuSelector: '.salat',
+    templateElement: templateElement,
+    picSrc: "images/сливочный1.png",
+    textTitle: 'Пицца',
+    promoToggle: true,
+    newToggle: true,
+    textDescription: 'Что-что, что-то',
+    textMass: '590',
+    price: '300',
+}
+
+for(let i = 0; i<15; i++){
+    const classSalat = new addElement(salatInfo);
+    classSalat.addElement();
+}
