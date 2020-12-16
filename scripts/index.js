@@ -392,7 +392,41 @@ const sliderMobile = new Swiper('.sliderHeaderMobile',{
     freeMode: true,
     slidesPerView: 2.5,
     spaceBetween: 30,
+    breakpoints:{
+        320:{
+            slidesPerView: 1.5,
+            spaceBetween: 10
+        },
+        350:{
+            slidesPerView: 2,
+        },
+        400:{
+            slidesPerView: 2.2,
+            spaceBetween: 15
+        },
+        450:{
+            slidesPerView: 2.5,
+            spaceBetween: 15
+        },
+        500:{
+            slidesPerView: 3,
+            spaceBetween: 15
+        },
+        600:{
+            slidesPerView: 3.5,
+            spaceBetween: 15
+        },
+        700:{
+            slidesPerView: 4,
+            spaceBetween: 20
+        },
+        800:{
+            slidesPerView: 5,
+            spaceBetween: 30
+        }
+    }
 })
+
 
 //Slider in basket
 const sliderBasket = new Swiper('.swiper-basket', {
