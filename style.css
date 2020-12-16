@@ -1304,7 +1304,6 @@ button{
 
 @media screen and (max-width: 500px){
   .window__text{
-    margin-top: ;
     font-weight: 300;
     font-size: 18px;
     line-height: 21px;
@@ -2494,9 +2493,6 @@ input[type="number"]:focus {
 
 
 /*Actions*/
-
-.actions{
-}
 
 .actions__title{
   font-weight: 500;
