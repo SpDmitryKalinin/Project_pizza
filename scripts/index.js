@@ -41,13 +41,11 @@ const orderTemplate = document.querySelector('.basket-order-template').content;
 const ordersHistory = document.querySelector('.cabinet__orders');
 const orderHistoryTemplate = document.querySelector('.lc-template').content;
 const orderHistoryItem = document.querySelector('.lc-item').content;
-
 const goodPeopleCadrs = document.querySelector('.boutUas__cadrs');
 const goodPeopleAction = document.querySelector('.aboutUs__action');
-
 const buttonNavigationAction = document.querySelector('.navigation__action');
 const buttonNavigationAbout = document.querySelector('.navigation__about');
-
+const buttonSleep = document.querySelector('.window__button');
 buttonNavigationAbout.addEventListener('click', cadrsFunction);
 buttonNavigationAction.addEventListener('click', actionFunction)
 goodPeopleCadrs.addEventListener('click', cadrsFunction)
@@ -120,9 +118,10 @@ function openPopUp(PopUp){
     });  
 }
 
-
-
 function closePopUp(ActivePopUp){
+    if(ActivePopUp === null){
+        return 0;
+    }
     ActivePopUp.classList.remove(classPopUpOpen);
     ActivePopUp.classList.add(classPopUpClose);
 }
@@ -398,18 +397,18 @@ const sliderMobile = new Swiper('.sliderHeaderMobile',{
             spaceBetween: 10
         },
         350:{
-            slidesPerView: 2,
+            slidesPerView: 1.8,
         },
         400:{
-            slidesPerView: 2.2,
-            spaceBetween: 15
+            slidesPerView: 2.3,
+            spaceBetween: 20
         },
         450:{
             slidesPerView: 2.5,
             spaceBetween: 15
         },
         500:{
-            slidesPerView: 3,
+            slidesPerView: 3.4,
             spaceBetween: 15
         },
         600:{
@@ -417,11 +416,11 @@ const sliderMobile = new Swiper('.sliderHeaderMobile',{
             spaceBetween: 15
         },
         700:{
-            slidesPerView: 4,
+            slidesPerView: 4.3,
             spaceBetween: 20
         },
         800:{
-            slidesPerView: 5,
+            slidesPerView: 4.5,
             spaceBetween: 30
         }
     }
@@ -451,6 +450,8 @@ const arrBasketButtons = Array.from(basketButton);
 arrBasketButtons.forEach(button =>{
     button.addEventListener('click', () => openPopUp(basketContainer));
 });
+
+buttonSleep.addEventListener('click', () => openPopUp(basketContainer));
 buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
 phoneForm.addEventListener('submit', () => openPopUp(codePopUp));
 codeForm.addEventListener('submit', () => openPopUp(cabinetContainer));
