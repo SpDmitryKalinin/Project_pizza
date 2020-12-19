@@ -46,10 +46,16 @@ const goodPeopleAction = document.querySelector('.aboutUs__action');
 const buttonNavigationAction = document.querySelector('.navigation__action');
 const buttonNavigationAbout = document.querySelector('.navigation__about');
 const buttonSleep = document.querySelector('.window__button');
-buttonNavigationAbout.addEventListener('click', cadrsFunction);
-buttonNavigationAction.addEventListener('click', actionFunction)
-goodPeopleCadrs.addEventListener('click', cadrsFunction)
-goodPeopleAction.addEventListener('click', actionFunction)
+
+const adminContainer = document.querySelector('.admin');
+const adminButton = document.querySelector('.admin-button');
+
+
+
+const submitAddElement = document.querySelector('.addElementSubmit');
+const submitAddPopular = document.querySelector('.addPopularSubmit');
+const submitAddHero = document.querySelector('.addHeroSubmit');
+const submitAddElementBasket = document.querySelector('.addBasketElementSubmit');
 
 
 forms.forEach(itemForm =>{
@@ -189,7 +195,7 @@ class addPopularElement{
 }
 
 //Добавление 10 элементов в слайдер popular
-for(let i=0; i<10; i++){
+for(let i=0; i<1; i++){
     const testPopularClassAdd = new addPopularElement(popularElementInfo);
     testPopularClassAdd.addPopularElement();
 }
@@ -239,7 +245,7 @@ function addBanner(heroImgSrc){
     mySlider.appendSlide(cloneTemplateHeroBanner);
 }
 
-for(let i=0; i<10; i++){
+for(let i=0; i<0; i++){
     addBanner(heroImgSrc);
 }
 
@@ -271,10 +277,10 @@ class addBasket{
     }
 }
 
-const test = new addBasket(slideForBasket);
-for(let i=0; i<10; i++){
-    test.addItem(basketSliderPresent);
-    test.addItem(basketSliderOther);
+const addBasketclass = new addBasket(slideForBasket);
+for(let i=0; i<1; i++){
+    addBasketclass.addItem(basketSliderPresent);
+    addBasketclass.addItem(basketSliderOther);
 }
 
 //Шаблон для добавления элементов в заказ
@@ -338,7 +344,6 @@ class AddOrderInHistory{
     }
     _initOrderHistory(){
         const templateCopy = this.template.cloneNode(true);
-        console.log(this.orders.length);
         templateCopy.querySelector('.cabinet__order-subtitle').textContent = this.date;
         for(let i=0; i<this.orders.length; i++){
             const templateItemCopy = this.templateItem.cloneNode(true);
@@ -444,13 +449,98 @@ const sliderPresent = new Swiper('.swiper-basket-present',{
 })
 
 
+function openAdmin(){
+    adminContainer.classList.toggle('admin-is-open');
+}
 
+const addElementForm = document.querySelector('.addElementForm');
+const addSliderPopularForm = document.querySelector('.slidpopular');
+const addHeroForm = document.querySelector('.addbannner');
+const addSliderInBasket = document.querySelector('.dopbasketelement');
+
+class saveData{
+    saveDataAddElement(form){
+        const inputList = Array.from(form.querySelectorAll('.admenu__input'));
+        const inputListMenu = Array.from(document.getElementsByName('radiomenu'));
+        let menuSelector = '0';
+        inputListMenu.forEach(radio =>{
+            if(radio.checked){
+                menuSelector = radio.value;
+            }
+        });
+        const object = {
+            menuSelector: menuSelector,
+            templateElement: templateElement,
+            picSrc: inputList[0].value,
+            textTitle: inputList[1].value,
+            promoToggle: true,
+            newToggle: true,
+            textDescription: inputList[2].value,
+            textMass: inputList[3].value,
+            price: inputList[4].value,
+        }
+        return object;
+    }
+    saveDataHeroBanner(form){
+        return form.querySelector('.admenu__input').value;
+    }
+    saveDataAddPopular(form){
+        const inputList = Array.from(form.querySelectorAll('.admenu__input'));
+        const object = {
+            templatePopularElement: document.querySelector('.popular-template-element').content,
+            popularImgSrc: inputList[0].value,
+            popularTitleText: inputList[1].value,
+            popularMassText: inputList[2].value,
+            popularPriceText: inputList[3].value
+        }
+        return object;
+    }
+    saveBasketSlider(form){
+        const inputList = Array.from(form.querySelectorAll('.admenu__input'));
+        const object ={
+            template: basketTemplateElement,
+            imageSrc: inputList[0].value,
+            title: inputList[1].value,
+            price: inputList[2].value
+        }
+        return object;
+    }
+}
+
+
+
+const saveDataForAddElementMenu = new saveData;
 
 const arrBasketButtons = Array.from(basketButton);
 arrBasketButtons.forEach(button =>{
-    button.addEventListener('click', () => openPopUp(basketContainer));
+    button.addEventListener('click', () => openPopUp(basketContainer), );
 });
 
+
+addElementForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const addElementClass = new addElement(saveDataForAddElementMenu.saveDataAddElement(addElementForm));
+    addElementClass.addElement();
+    sliderPopular.update();
+});
+
+addHeroForm.addEventListener('submit', (evt) =>{
+    evt.preventDefault();
+    addBanner(saveDataForAddElementMenu.saveDataHeroBanner(addHeroForm))
+});
+
+addSliderPopularForm.addEventListener('submit', (evt) =>{
+    evt.preventDefault();
+    const addPopularElementClass = new addPopularElement(saveDataForAddElementMenu.saveDataAddPopular(addSliderPopularForm));
+    addPopularElementClass.addPopularElement();
+});
+
+addSliderInBasket.addEventListener('submit', (evt) =>{
+    evt.preventDefault();
+    const addBasketclassListen = new addBasket(saveDataForAddElementMenu.saveBasketSlider(addSliderInBasket));
+    addBasketclassListen.addItem(basketSliderPresent);
+    addBasketclassListen.addItem(basketSliderOther);
+});
 buttonSleep.addEventListener('click', () => openPopUp(basketContainer));
 buttonAut.addEventListener('click', () => openPopUp(phonePopUp));
 phoneForm.addEventListener('submit', () => openPopUp(codePopUp));
@@ -465,6 +555,11 @@ timeDeliveryButton.addEventListener('click' , () => {
 });
 deliveryForm.addEventListener('submit', () => openPopUp(placePopUp));
 placeForm.addEventListener('submit', () =>openPopUp(thanksOrderPopUp));
+buttonNavigationAbout.addEventListener('click', cadrsFunction);
+buttonNavigationAction.addEventListener('click', actionFunction);
+goodPeopleCadrs.addEventListener('click', cadrsFunction);
+goodPeopleAction.addEventListener('click', actionFunction);
+adminButton.addEventListener('click', openAdmin);
 
 
 
@@ -483,7 +578,9 @@ const pizzaInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+
+
+for(let i = 0; i<1; i++){
     const classPizza = new addElement(pizzaInfo);
     classPizza.addElement();
 }
@@ -500,7 +597,7 @@ const rolsInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+for(let i = 0; i<1; i++){
     const classRols = new addElement(rolsInfo);
     classRols.addElement();
 }
@@ -517,7 +614,7 @@ const warnRolsInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+for(let i = 0; i<1; i++){
     const classWarnRols = new addElement(warnRolsInfo);
     classWarnRols.addElement();
 }
@@ -534,7 +631,7 @@ const comboInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+for(let i = 0; i<1; i++){
     const classCombo = new addElement(comboInfo);
     classCombo.addElement();
 }
@@ -551,7 +648,7 @@ const snackInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+for(let i = 0; i<1; i++){
     const classSnack = new addElement(snackInfo);
     classSnack.addElement();
 }
@@ -568,7 +665,7 @@ const salatInfo = {
     price: '300',
 }
 
-for(let i = 0; i<15; i++){
+for(let i = 0; i<1; i++){
     const classSalat = new addElement(salatInfo);
     classSalat.addElement();
 }
