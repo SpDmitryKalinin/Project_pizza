@@ -2,7 +2,7 @@ import {addElement} from './addElements.js';
 import {addPopularElement} from './addPopularElement.js';
 import {addBasket} from './addBasket.js';
 import {AddOrder} from './addOrder.js';
-import {AddOrderInHistory} from './AddOrderInHistory.js';
+import {AddOrderInHistory} from './addOrderInHistory.js';
 import {Menu} from './burger.js';
 import {saveData} from './saveData.js';
 
