@@ -2347,6 +2347,15 @@ input[type="number"]:focus {
     top: 10px;
     left: 463px;
   }
+
+  @media screen and (max-width: 500px){
+    .basket__cross-button{
+      position: absolute;
+      top: 10px;
+      left: 269px;
+    }
+  }
+
   .basket__orders{
     overflow: scroll;
     overflow-x:hidden;
