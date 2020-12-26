@@ -2313,6 +2313,9 @@ input[type="number"]:focus {
   .basket-container{
     font-family: 'Roboto';
   }
+
+
+
   .basket{
     position: relative;
     display: flex;
@@ -2327,6 +2330,7 @@ input[type="number"]:focus {
   @media screen and (max-width: 500px){
     .basket{
       width: 309px;
+      overflow: hidden;
     }
   }
 
@@ -2382,6 +2386,14 @@ input[type="number"]:focus {
     flex-direction: row;
   }
 
+  @media screen and (max-width: 500px){
+    .basket__subtitles{
+      display: none;
+    }
+  }
+
+  
+
   .basket__subtitle{
     justify-self: flex-end;
     font-weight: 400;
@@ -2398,6 +2410,11 @@ input[type="number"]:focus {
     margin-top: 0;
     padding-right: 20px;
     width: 100%;
+  }
+
+  .basket__order-containerTwo{
+    display: flex;
+    align-items: center;
   }
 
   @media screen and (max-width: 500px){
@@ -2647,6 +2664,7 @@ input[type="number"]:focus {
   box-sizing: border-box;
   border-radius: 9px;
   margin-right: 13px;
+  align-items: center;
 }
 
 @media screen and (max-width: 500px){

@@ -112,14 +112,23 @@ function addEventListenersForCross(){
 }
 addEventListenersForCross();
 
+//Функция закрытия форм на overlay
+function closeInOverlay(evt){
+    if(evt.target.closest('form')===null && evt.target.closest('.header__button-autoriz')===null && evt.target.closest('.header__basket')===null){
+        closePopUp(document.querySelector('.popUp_is-open'));
+    }
+}
+
 //Открытие попапов
 function openPopUp(PopUp){
+    document.addEventListener('click', closeInOverlay);
     PopUp.classList.remove(classPopUpClose);
     PopUp.classList.add(classPopUpOpen);
     if(PopUp.classList.contains('basket-container')){
         sliderBasket.update();
         sliderPresent.update();
     }
+    
     const openPopUps = Array.from(document.querySelectorAll('.popUp_is-open'));
     openPopUps.forEach(popUpItem =>{
         if(popUpItem != PopUp){
@@ -131,6 +140,7 @@ function openPopUp(PopUp){
 
 //Закрытие попапов
 function closePopUp(ActivePopUp){
+    document.removeEventListener('click', closeInOverlay);
     if(ActivePopUp === null){
         return 0;
     }
@@ -264,6 +274,9 @@ forms.forEach(itemForm =>{
         evt.preventDefault();
     });
 });
+
+
+
 
 //*Тестовая инициализация меню*//
 
