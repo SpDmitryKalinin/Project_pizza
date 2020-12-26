@@ -114,7 +114,7 @@ addEventListenersForCross();
 
 //Функция закрытия форм на overlay
 function closeInOverlay(evt){
-    if(evt.target.closest('form')===null && evt.target.closest('.header__button-autoriz')===null && evt.target.closest('.header__basket')===null){
+    if(evt.target.closest('form')===null && evt.target.closest('.header__button-autoriz')===null && evt.target.closest('.header__basket')===null && evt.target.closest('.header__present-time')===null){
         closePopUp(document.querySelector('.popUp_is-open'));
     }
 }
