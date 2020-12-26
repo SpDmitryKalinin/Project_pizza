@@ -47,7 +47,7 @@ export class saveData{
     saveBasketSlider(form){
         const inputList = Array.from(form.querySelectorAll('.admenu__input'));
         const object ={
-            template: basketTemplateElement,
+            template: document.querySelector('.basket-template-element').content,
             imageSrc: inputList[0].value,
             title: inputList[1].value,
             price: inputList[2].value
