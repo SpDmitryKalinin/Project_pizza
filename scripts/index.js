@@ -46,12 +46,6 @@ const orderHistoryItem = document.querySelector('.lc-item').content;
 const buttonNavigationAction = document.querySelector('.navigation__action');
 const buttonNavigationAbout = document.querySelector('.navigation__about');
 const buttonSleep = document.querySelector('.window__button');
-const adminContainer = document.querySelector('.admin');
-const adminButton = document.querySelector('.admin-button');
-const addElementForm = document.querySelector('.addElementForm');
-const addSliderPopularForm = document.querySelector('.slidpopular');
-const addHeroForm = document.querySelector('.addbannner');
-const addSliderInBasket = document.querySelector('.dopbasketelement');
 
 const saveDataForAddElementMenu = new saveData;
 
@@ -224,32 +218,6 @@ arrBasketButtons.forEach(button =>{
     button.addEventListener('click', () => openPopUp(basketContainer), );
 });
 
-
-//Cлушатели
-addElementForm.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    const addElementClass = new addElement(saveDataForAddElementMenu.saveDataAddElement(addElementForm));
-    addElementClass.addElement();
-    sliderPopular.update();
-});
-
-addHeroForm.addEventListener('submit', (evt) =>{
-    evt.preventDefault();
-    addBanner(saveDataForAddElementMenu.saveDataHeroBanner(addHeroForm))
-});
-
-addSliderPopularForm.addEventListener('submit', (evt) =>{
-    evt.preventDefault();
-    const addPopularElementClass = new addPopularElement(saveDataForAddElementMenu.saveDataAddPopular(addSliderPopularForm));
-    addPopularElementClass.addPopularElement();
-});
-
-addSliderInBasket.addEventListener('submit', (evt) =>{
-    evt.preventDefault();
-    const addBasketclassListen = new addBasket(saveDataForAddElementMenu.saveBasketSlider(addSliderInBasket));
-    addBasketclassListen.addItem(basketSliderPresent);
-    addBasketclassListen.addItem(basketSliderOther);
-});
 buttonSleep.addEventListener('click', () => openPopUp(basketContainer));
 const arrButtonAut = Array.from(buttonAut);
 arrButtonAut.forEach(button =>{
@@ -268,7 +236,6 @@ deliveryForm.addEventListener('submit', () => openPopUp(placePopUp));
 placeForm.addEventListener('submit', () =>openPopUp(thanksOrderPopUp));
 buttonNavigationAbout.addEventListener('click', cadrsFunction);
 buttonNavigationAction.addEventListener('click', actionFunction);
-adminButton.addEventListener('click', openAdmin);
 forms.forEach(itemForm =>{
     itemForm.addEventListener('submit', function (evt){
         evt.preventDefault();

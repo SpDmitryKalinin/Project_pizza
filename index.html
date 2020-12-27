@@ -10,7 +10,6 @@
 
     <body class="body">
         <div class="page">
-            <button class="admin-button">Открыть / закрыть админку</button>
             <header class="header">
                 <div class="header__logo">
                     <img class="header__logo-image" src="images/blacklogo.png" alt="Логотип">
@@ -637,125 +636,6 @@
             <template class="lc-item">
                 <li class="cabinet__order-name">Пицца Цезарь</li>
             </template>
-
-
-
-            <div class="admin">
-                <form class="addElementForm admenu admborder">
-                    <div class="admenu__container">
-                        <h2 class="admenu__title">Добавление элементов меню</h2>
-
-                        <div class="admenu__inputs">
-                            <h3 class="admenu__inputs-title">Выберите пункт меню</h3>
-                            <div class=" place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="rollss" value=".rols" name="radiomenu">
-                                <label class="place__label-person code__label" for="rollss" ></label>
-                                <p class="place__label-text">Роллы и суши</p>
-                            </div>
-
-                            <div class="place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="hotrollss" value=".warn-rols" name="radiomenu">
-                                <label class="place__label-person code__label" for="hotrollss" ></label>
-                                <p class="place__label-text">Теплые роллы</p>
-                            </div>
-
-                            <div class="place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="combos" value=".combo" checked name="radiomenu">
-                                <label class="place__label-person code__label" for="combos" ></label>
-                                 <p class="place__label-text">Комбо и сеты</p>
-                            </div>
-
-                            <div class="place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="pizzas" value=".pizza" name="radiomenu">
-                                <label class="place__label-person code__label" for="pizzas" ></label>
-                                <p class="place__label-text">Пицца</p>
-                            </div>
-
-                            <div class="place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="snacks" value=".snack" name="radiomenu">
-                                <label class="place__label-person code__label" for="snacks" ></label>
-                                <p class="place__label-text">Снеки и десерты</p>
-                             </div>
-
-                            <div class="place__check-input code__check-input">
-                                <input class=" place__checkbox-person code__checkbox" type="radio" id="salats" value=".salat" name="radiomenu">
-                                <label class="place__label-person code__label" for="salats" ></label>
-                                <p class="place__label-text">Салаты и напитки</p>
-                            </div>
-                        </div>
-
-                        <h3 class="admenu__image-title admenu__title">Введите ссылку картинки</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="url" id="imageee" placeholder="Введите ссылку картинки" required>
-                        
-                        <h3 class="admenu__image-title admenu__title">Введите заголовок</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="text" id="titttle" placeholder="Введите заголовок" required>
-
-                        <h3 class="admenu__image-title admenu__title">Выберите дополнительное сообщение</h3>
-                        <div class="place__check-input code__check-input">
-                            <input class=" place__checkbox-person code__checkbox" type="checkbox" id="actionsss" name="actionsss">
-                            <label class="place__label-person code__label" for="actionsss" ></label>
-                            <p class="place__label-text">Акция</p>
-                         </div>
-                         <div class="place__check-input code__check-input">
-                            <input class=" place__checkbox-person code__checkbox" type="checkbox" id="neeew" name="neeew">
-                            <label class="place__label-person code__label" for="neeew" ></label>
-                            <p class="place__label-text">Новинка</p>
-                         </div>
-
-                         <h3 class="admenu__image-title admenu__title">Добавьте описание</h3>
-                         <textarea class="admenu__input-url place__inputs-styles admenu__input admenu__text"></textarea>
-
-                         <h3 class="admenu__image-title admenu__title">Укажите массу</h3>
-                         <input class="admenu__input-url place__inputs-styles admenu__input" type="number" id="masss" placeholder="Укажите массу" required>
-
-                         <h3 class="admenu__image-title admenu__title">Укажите цену</h3>
-                         <input class="admenu__input-url place__inputs-styles admenu__input" type="number" id="prrrice" placeholder="Укажите цену" required>
-
-                         <button class="addElementSubmit admenu__button present___sum-button-element" type="submit">Добавить блюдо</button>
-
-
-                    </div>
-                </form>
-
-                <form class="slidpopular admenu admborder">
-                    <div class="admenu__container">
-                        <h2 class="admenu__title">Добавление элементов в раздел популярное</h2>
-
-                        <h3 class="admenu__title">Введите ссылку картинки</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="url" id="imageee" placeholder="Введите ссылку картинки" required>
-                        <h3 class="admenu__image-title admenu__title">Введите заголовок</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="text" id="titttle" placeholder="Введите заголовок" required>
-                        <h3 class="admenu__image-title admenu__title">Укажите массу</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="number" id="masss" placeholder="Укажите массу" required>
-                        <h3 class="admenu__image-title admenu__title">Укажите цену</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="number" id="prrrice" placeholder="Укажите цену" required>
-                        <button class="addPopularSubmit admenu__button present___sum-button-element" type="submit">Добавить блюдо</button>
-                    </div>
-                </form>
-                <div>
-                <form class="addbannner admenu admborder">
-                    <div class="admenu__container">
-                        <h2 class="admenu__title">Добавление нового банера</h2>
-                        <h3 class="admenu__title">Введите ссылку картинки</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="url" id="imageee" placeholder="Введите ссылку картинки" required>
-                        <button class="addHeroSubmit admenu__button present___sum-button-element" type="submit">Добавить банер</button>
-                    </div>
-                </form>
-
-                <form class="dopbasketelement admenu admborder">
-                    <div class="admenu__container">
-                        <h2 class="admenu__title">Добавление элементов корзины</h2>
-                        <h3 class="admenu__title">Введите ссылку картинки</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="url" id="imageee" placeholder="Введите ссылку картинки" required>
-                        <h3 class="admenu__image-title admenu__title">Введите заголовок</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="text" id="titttle" placeholder="Введите заголовок" required>
-                        <h3 class="admenu__image-title admenu__title">Укажите цену</h3>
-                        <input class="admenu__input-url place__inputs-styles admenu__input" type="number" id="prrrice" placeholder="Укажите цену" required>
-                        <button class="addBasketElementSubmit admenu__button present___sum-button-element" type="submit">Добавить блюдо</button>
-                    </div>
-                </form>
-                </div>
-            </div>
 
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script type= "module" src="./scripts/index.js"></script>
